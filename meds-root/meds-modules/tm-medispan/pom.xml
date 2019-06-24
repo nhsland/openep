@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <parent>
+        <artifactId>meds-modules</artifactId>
+        <groupId>com.marand.thinkmed</groupId>
+        <version>3.7.0-SNAPSHOT</version>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>tm-medispan</artifactId>
+    <version>3.7.0-SNAPSHOT</version>
+    <name>Warnings - MediSpan</name>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>com.marand.thinkmed</groupId>
+            <artifactId>tm-medications-server</artifactId>
+        </dependency>
+
+        <!-- Medispan -->
+
+        <dependency>
+            <groupId>medispan</groupId>
+            <artifactId>allergicreactions</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>medispan</groupId>
+            <artifactId>business</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>medispan</groupId>
+            <artifactId>compression</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>medispan</groupId>
+            <artifactId>concepts</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>medispan</groupId>
+            <artifactId>conceptfiltering</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>medispan</groupId>
+            <artifactId>conditions</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>medispan</groupId>
+            <artifactId>diseasecontraindications</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>medispan</groupId>
+            <artifactId>documents</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>medispan</groupId>
+            <artifactId>duplicatetherapy</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>medispan</groupId>
+            <artifactId>foundation</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>medispan</groupId>
+            <artifactId>icd10s</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>medispan</groupId>
+            <artifactId>interactions</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>medispan</groupId>
+            <artifactId>screening</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>medispan</groupId>
+            <artifactId>utility</artifactId>
+        </dependency>
+
+        <!-- Oracle -->
+
+        <dependency>
+            <groupId>oracle</groupId>
+            <artifactId>ojdbc6</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.owasp.encoder</groupId>
+            <artifactId>encoder</artifactId>
+        </dependency>
+
+    </dependencies>
+
+</project>

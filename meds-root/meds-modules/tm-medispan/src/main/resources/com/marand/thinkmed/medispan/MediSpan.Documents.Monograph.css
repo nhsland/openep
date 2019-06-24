@@ -1,0 +1,135 @@
+﻿body, tbody
+{
+    font-family: verdana;
+    font-size: 8pt;
+    
+    margin: .5em;
+}
+
+p
+{
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    
+    font-size: inherit;
+}
+
+sup
+{
+    vertical-align: super;
+    font-size: 90%;
+}
+
+table
+{
+    width: 100%;
+}
+
+.CodeList
+{
+    vertical-align: top;
+    
+    font-size: smaller;
+    
+    padding-bottom: .5em;
+}
+.CodeTitle
+{
+    width: 100%;
+    
+    padding: .25em;
+
+    background-color: #99ccff;
+    
+    font-weight: bold;
+}
+.CodeItem
+{
+    padding-right: 2em;
+    
+    padding-left: 1em;
+    
+    font-size: xx-small;
+}
+.CodeItemSelected
+{
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.Section
+{
+    margin-bottom: 1em;
+    
+    width: 100%;
+}
+.SectionTitle
+{
+    width: 100%;
+    
+    padding: .25em;
+
+    background-color: #99ccff;
+    
+    font-size: 10pt;
+    font-weight: bold;
+    
+    margin-bottom: 1em;
+}
+
+.Title
+{
+    color: white;
+    background-color: #6f8fa5;
+    
+    padding: .5em;
+    
+    font-size: 12pt;
+    font-weight: bold;
+    text-align: center;
+}
+
+#codes
+{
+    background-color: #e7f3fb;
+}
+
+.Reference
+{
+    padding-left: 1em;
+}
+.ReferenceIndex
+{
+    padding-right: .5em;
+}
+.ReferenceLink
+{
+}
+
+.Footer
+{
+    font-size: xx-small;
+    
+    background-color: #e7f3fb;
+    
+    margin-top: 2em;
+    
+    border-style: solid none solid none;
+    border-width: thin;
+    border-top-color: #6f8fa5;
+    border-bottom-color: #6f8fa5;
+}
+
+.Disclaimer
+{
+    margin-bottom: 1em;
+}
+
+.Copyright
+{
+    width: 90%;
+    
+    text-align: center;
+}

@@ -1,0 +1,1021 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.8.RELEASE</version>
+        <relativePath/>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.marand.thinkmed</groupId>
+    <artifactId>meds-root</artifactId>
+    <version>3.7.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>meds-modules</module>
+    </modules>
+
+    <properties>
+        <tm.version>2.5.5.1.0.0-A1</tm.version>
+
+        <commons-logging.version>1.2</commons-logging.version>
+        <commons-lang3.version>3.8.1</commons-lang3.version>
+        <datasource-proxy-version>1.4.1</datasource-proxy-version>
+        <guava.version>25.0-jre</guava.version>
+        <hapi.version>2.2</hapi.version>
+        <hapi.fhir.version>2.0</hapi.fhir.version>
+        <hikaridb.version>2.7.1</hikaridb.version>
+        <html.encoder.version>1.2.1</html.encoder.version>
+        <hibernate.version>5.2.17.Final</hibernate.version>
+        <hibernate-validator.version>5.4.1.Final</hibernate-validator.version>
+        <html.encoder.version>1.2.1</html.encoder.version>
+        <icu4j.version>61.1</icu4j.version>
+        <java.version>1.8</java.version>
+        <javax-mail.version>1.4.4</javax-mail.version>
+        <junit-jupiter-api.version>RELEASE</junit-jupiter-api.version>
+        <keycloak.version>3.1.0.Final</keycloak.version>
+        <kotlin.version>1.2.60</kotlin.version>
+        <kotlin.compiler.incremental>true</kotlin.compiler.incremental>
+        <kotlin.compiler.jvmTarget>1.8</kotlin.compiler.jvmTarget>
+        <kotlinx-coroutines-core.version>0.23.4</kotlinx-coroutines-core.version>
+        <lombok.version>1.18.4</lombok.version>
+        <medispan.version>5.1.6</medispan.version>
+        <mockito-kotlin.version>1.6.0</mockito-kotlin.version>
+        <oracle-jdbc.version>11.2.0.2.0</oracle-jdbc.version>
+        <poi-ooxml.version>4.0.1</poi-ooxml.version>
+        <resteasy.version>3.0.12.Final</resteasy.version>
+        <servlet-api.version>3.0.1</servlet-api.version>
+        <sleuth.version>1.2.4.RELEASE</sleuth.version>
+        <swagger.version>2.7.0</swagger.version>
+        <thinkehr-framework.version>2.4.4</thinkehr-framework.version>
+        <thinkehr-api.version>2.4.4</thinkehr-api.version>
+        <auditing.version>0.0.6</auditing.version>
+        <audit-queue.version>1.0.0-A8</audit-queue.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <!-- OPENeP -->
+
+            <dependency>
+                <groupId>com.marand.thinkmed</groupId>
+                <artifactId>tm-fdb-common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.thinkmed</groupId>
+                <artifactId>tm-medications-model</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.thinkmed</groupId>
+                <artifactId>cmp-utils</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.thinkmed</groupId>
+                <artifactId>tm-medications-common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.thinkmed</groupId>
+                <artifactId>tm-request-core</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.thinkmed</groupId>
+                <artifactId>tm-medications-server</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.thinkmed</groupId>
+                <artifactId>tm-request-keycloak</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.thinkmed</groupId>
+                <artifactId>tm-medications-connector</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.thinkmed</groupId>
+                <artifactId>tm-medications-connector-impl</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.thinkmed</groupId>
+                <artifactId>tm-medications-connector_</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.thinkmed</groupId>
+                <artifactId>tm-medications-api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.thinkmed</groupId>
+                <artifactId>tm-medications-client</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.thinkmed</groupId>
+                <artifactId>tm-medications-report</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.thinkmed</groupId>
+                <artifactId>tm-medications-ehr-model</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.thinkmed</groupId>
+                <artifactId>tm-fdb-server</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.thinkmed</groupId>
+                <artifactId>tm-elmdoc</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.thinkmed</groupId>
+                <artifactId>tm-medispan</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.thinkmed</groupId>
+                <artifactId>tm-request-cors</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.thinkmed</groupId>
+                <artifactId>tm-request-oauth2</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.thinkmed</groupId>
+                <artifactId>tm-medications-bpm-common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.thinkmed</groupId>
+                <artifactId>tm-auditing</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.thinkmed</groupId>
+                <artifactId>tm-medications-bpm-server</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <!-- Meds!Config -->
+
+            <dependency>
+                <groupId>com.marand.thinkmed</groupId>
+                <artifactId>meds-config-rest</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.thinkmed</groupId>
+                <artifactId>meds-config-server</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.thinkmed</groupId>
+                <artifactId>meds-config-updaters</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.thinkmed</groupId>
+                <artifactId>meds-config-api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <!-- Think!Clinical -->
+
+            <dependency>
+                <groupId>com.marand.maf</groupId>
+                <artifactId>maf-core-server</artifactId>
+                <version>${tm.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.bouncycastle</groupId>
+                        <artifactId>*</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.springframework.security</groupId>
+                        <artifactId>spring-security-core</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.springframework.security</groupId>
+                        <artifactId>spring-security-web</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.springframework.security</groupId>
+                        <artifactId>spring-aop</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.springframework.security</groupId>
+                        <artifactId>spring-security-config</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.apache.logging.log4j</groupId>
+                        <artifactId>log4j-slf4j-impl</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>com.marand.ispek.scheduling</groupId>
+                        <artifactId>ispek-scheduling-calendarapi-calsvci</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>com.marand.ispek.scheduling</groupId>
+                        <artifactId>ispek-scheduling-calendarapi-calsvc</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>com.marand.ispek.scheduling</groupId>
+                        <artifactId>ispek-scheduling-calendarapi-mail</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>com.marand.ispek.scheduling</groupId>
+                        <artifactId>ispek-scheduling-calendarapi-calcorei</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>com.marand.ispek.scheduling</groupId>
+                        <artifactId>ispek-scheduling-calendarapi-calcore</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>xalan</groupId>
+                        <artifactId>xalan</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.maf</groupId>
+                <artifactId>maf-core</artifactId>
+                <version>${tm.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.bouncycastle</groupId>
+                        <artifactId>*</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.springframework.security</groupId>
+                        <artifactId>spring-security-core</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.springframework.security</groupId>
+                        <artifactId>spring-security-web</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.springframework.security</groupId>
+                        <artifactId>spring-aop</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.springframework.security</groupId>
+                        <artifactId>spring-security-config</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.apache.logging.log4j</groupId>
+                        <artifactId>log4j-slf4j-impl</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.maf</groupId>
+                <artifactId>maf-core-test</artifactId>
+                <version>${tm.version}</version>
+                <scope>test</scope>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.bouncycastle</groupId>
+                        <artifactId>*</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.apache.logging.log4j</groupId>
+                        <artifactId>log4j-slf4j-impl</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.ispek</groupId>
+                <artifactId>ispek-bpm-common</artifactId>
+                <version>${tm.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.zefer</groupId>
+                        <artifactId>pd4ml.pro</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.thinkmed</groupId>
+                <artifactId>tm-clinical-html-ui</artifactId>
+                <version>${tm.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>com.marand.thinkmed</groupId>
+                        <artifactId>tm-themes-common</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.ispek</groupId>
+                <artifactId>ispek-bpm-server</artifactId>
+                <version>${tm.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>com.marand.ispek</groupId>
+                        <artifactId>ispek-radiology-integration-common</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>com.marand.ispek.scheduling</groupId>
+                        <artifactId>ispek-scheduling-calendarapi-calsvci</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>com.marand.ispek.scheduling</groupId>
+                        <artifactId>ispek-scheduling-calendarapi-calsvc</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>com.marand.ispek.scheduling</groupId>
+                        <artifactId>ispek-scheduling-calendarapi-mail</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>com.marand.ispek.scheduling</groupId>
+                        <artifactId>ispek-scheduling-calendarapi-calcorei</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>com.marand.ispek.scheduling</groupId>
+                        <artifactId>ispek-scheduling-calendarapi-calcore</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>com.marand.ispek.scheduling</groupId>
+                        <artifactId>ispek-scheduling-settings</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.zefer</groupId>
+                        <artifactId>pd4ml.pro</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.ispek</groupId>
+                <artifactId>ispek-bpm-test</artifactId>
+                <version>${tm.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.ispek</groupId>
+                <artifactId>ispek-ehr-common</artifactId>
+                <version>${tm.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.thinkmed</groupId>
+                <artifactId>tm-process-common</artifactId>
+                <version>${tm.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.thinkmed</groupId>
+                <artifactId>tm-alfresco-common</artifactId>
+                <version>${tm.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.thinkmed</groupId>
+                <artifactId>tm-alfresco-server</artifactId>
+                <version>${tm.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.ispek</groupId>
+                <artifactId>ispek-ehr-common-server</artifactId>
+                <version>${tm.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>com.marand.ispek</groupId>
+                        <artifactId>ispek-security-common</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.thinkmed</groupId>
+                <artifactId>tm-html-ui-common</artifactId>
+                <version>${tm.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>com.marand.thinkmed</groupId>
+                        <artifactId>tm-themes-common</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.ispek</groupId>
+                <artifactId>ispek-print-jasperreports-common</artifactId>
+                <version>${tm.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.ispek</groupId>
+                <artifactId>ispek-common</artifactId>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>tm-api</artifactId>
+                        <groupId>com.marand.thinkmed</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>tm-gui-resources</artifactId>
+                        <groupId>com.marand.thinkmed</groupId>
+                    </exclusion>
+                </exclusions>
+                <version>${tm.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.thinkmed</groupId>
+                <artifactId>tm-core-api</artifactId>
+                <version>${tm.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.thinkmed</groupId>
+                <artifactId>tm-demographics-api</artifactId>
+                <version>${tm.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.thinkmed</groupId>
+                <artifactId>tm-medical-api</artifactId>
+                <version>${tm.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.thinkmed</groupId>
+                <artifactId>tm-externals-api</artifactId>
+                <version>${tm.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.thinkmed</groupId>
+                <artifactId>tm-patient-api</artifactId>
+                <version>${tm.version}</version>
+            </dependency>
+
+            <dependency>
+                <artifactId>tm-html-externals</artifactId>
+                <groupId>com.marand.thinkmed</groupId>
+                <version>${tm.version}</version>
+            </dependency>
+
+            <dependency>
+                <artifactId>tm-html-frameworks</artifactId>
+                <groupId>com.marand.thinkmed</groupId>
+                <version>${tm.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.thinkmed</groupId>
+                <artifactId>tm-jquery-framework</artifactId>
+                <version>${tm.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.thinkmed</groupId>
+                <artifactId>tm-jquery-external</artifactId>
+                <version>${tm.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.thinkmed</groupId>
+                <artifactId>tm-jsclass-external</artifactId>
+                <version>${tm.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.thinkmed</groupId>
+                <artifactId>tm-ftscroller-external</artifactId>
+                <version>${tm.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.thinkmed</groupId>
+                <artifactId>tm-angularjs-external</artifactId>
+                <version>${tm.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.thinkmed</groupId>
+                <artifactId>tm-bootstrap-external</artifactId>
+                <version>${tm.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.ispek</groupId>
+                <artifactId>ispek-print-common</artifactId>
+                <version>${tm.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.apache.logging.log4j</groupId>
+                        <artifactId>log4j-slf4j-impl</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.thinkmed</groupId>
+                <artifactId>tm-process-server</artifactId>
+                <version>${tm.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.jboss.resteasy</groupId>
+                        <artifactId>resteasy-jackson-provider</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.thinkmed</groupId>
+                <artifactId>tm-themes-common</artifactId>
+                <version>${tm.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.thinkmed</groupId>
+                <artifactId>tm-momentjs-external</artifactId>
+                <version>${tm.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.thinkmed</groupId>
+                <artifactId>tm-visjs-external</artifactId>
+                <version>${tm.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.thinkmed</groupId>
+                <artifactId>tm-highcharts-external</artifactId>
+                <version>${tm.version}</version>
+            </dependency>
+
+            <!--Think!EHR-->
+
+            <dependency>
+                <groupId>com.marand.thinkehr</groupId>
+                <artifactId>thinkehr-framework-tdo-common</artifactId>
+                <version>${thinkehr-framework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.thinkehr</groupId>
+                <artifactId>thinkehr-remoting</artifactId>
+                <version>${thinkehr-api.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.thinkehr</groupId>
+                <artifactId>thinkehr-api</artifactId>
+                <version>${thinkehr-api.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.thinkehr</groupId>
+                <artifactId>thinkehr-tdd-api</artifactId>
+                <version>${thinkehr-api.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.thinkehr</groupId>
+                <artifactId>thinkehr-templates-api</artifactId>
+                <version>${thinkehr-api.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.thinkehr</groupId>
+                <artifactId>thinkehr-form-api</artifactId>
+                <version>${thinkehr-api.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.thinkehr</groupId>
+                <artifactId>thinkehr-query-api</artifactId>
+                <version>${thinkehr-api.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.thinkehr</groupId>
+                <artifactId>thinkehr-framework-tdo-converter</artifactId>
+                <version>${thinkehr-framework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.thinkehr</groupId>
+                <artifactId>thinkehr-framework-presentation</artifactId>
+                <version>${thinkehr-framework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.thinkehr</groupId>
+                <artifactId>thinkehr-framework-session-spring</artifactId>
+                <version>${thinkehr-framework.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.aspectj</groupId>
+                        <artifactId>aspectjrt</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.thinkehr</groupId>
+                <artifactId>thinkehr-framework-session-hibernate5</artifactId>
+                <version>${thinkehr-framework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.thinkehr</groupId>
+                <artifactId>thinkehr-framework-webtdo</artifactId>
+                <version>${thinkehr-framework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.thinkehr</groupId>
+                <artifactId>thinkehr-framework-aql</artifactId>
+                <version>${thinkehr-framework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.thinkehr</groupId>
+                <artifactId>thinkehr-framework-mapper</artifactId>
+                <version>${thinkehr-framework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.thinkehr</groupId>
+                <artifactId>thinkehr-ext-api</artifactId>
+                <version>${thinkehr-api.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.thinkehr</groupId>
+                <artifactId>thinkehr-model</artifactId>
+                <version>${thinkehr-api.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.thinkehr</groupId>
+                <artifactId>thinkehr-tagging-api</artifactId>
+                <version>${thinkehr-api.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.marand.thinkehr</groupId>
+                <artifactId>thinkehr-validation</artifactId>
+                <version>${thinkehr-api.version}</version>
+            </dependency>
+
+            <!--Spring-->
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-sleuth</artifactId>
+                <version>${sleuth.version}</version>
+            </dependency>
+
+            <!-- Hibernate -->
+
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-validator</artifactId>
+                <version>${hibernate-validator.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-core</artifactId>
+                <version>${hibernate.version}</version>
+            </dependency>
+
+            <!-- Kotlin -->
+
+            <dependency>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-stdlib-jdk8</artifactId>
+                <version>${kotlin.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-reflect</artifactId>
+                <version>${kotlin.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-test</artifactId>
+                <version>${kotlin.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.nhaarman</groupId>
+                <artifactId>mockito-kotlin</artifactId>
+                <version>${mockito-kotlin.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.jetbrains.kotlinx</groupId>
+                <artifactId>kotlinx-coroutines-core</artifactId>
+                <!--suppress MavenCoroutinesDeprecation -->
+                <version>${kotlinx-coroutines-core.version}</version>
+            </dependency>
+
+            <!-- Swagger -->
+
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+
+            <!-- Medispan -->
+
+            <dependency>
+                <groupId>medispan</groupId>
+                <artifactId>allergicreactions</artifactId>
+                <version>${medispan.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>medispan</groupId>
+                <artifactId>business</artifactId>
+                <version>${medispan.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>medispan</groupId>
+                <artifactId>compression</artifactId>
+                <version>${medispan.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>medispan</groupId>
+                <artifactId>concepts</artifactId>
+                <version>${medispan.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>medispan</groupId>
+                <artifactId>conceptfiltering</artifactId>
+                <version>${medispan.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>medispan</groupId>
+                <artifactId>conditions</artifactId>
+                <version>${medispan.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>medispan</groupId>
+                <artifactId>diseasecontraindications</artifactId>
+                <version>${medispan.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>medispan</groupId>
+                <artifactId>documents</artifactId>
+                <version>${medispan.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>medispan</groupId>
+                <artifactId>duplicatetherapy</artifactId>
+                <version>${medispan.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>medispan</groupId>
+                <artifactId>foundation</artifactId>
+                <version>${medispan.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>medispan</groupId>
+                <artifactId>icd10s</artifactId>
+                <version>${medispan.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>medispan</groupId>
+                <artifactId>interactions</artifactId>
+                <version>${medispan.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>medispan</groupId>
+                <artifactId>screening</artifactId>
+                <version>${medispan.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>medispan</groupId>
+                <artifactId>utility</artifactId>
+                <version>${medispan.version}</version>
+            </dependency>
+
+            <!-- HAPI FHIR-->
+
+            <dependency>
+                <groupId>ca.uhn.hapi.fhir</groupId>
+                <artifactId>hapi-fhir-base</artifactId>
+                <version>${hapi.fhir.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>ca.uhn.hapi.fhir</groupId>
+                <artifactId>hapi-fhir-structures-dstu2</artifactId>
+                <version>${hapi.fhir.version}</version>
+            </dependency>
+
+            <!-- HAPI HL7-->
+
+            <dependency>
+                <groupId>ca.uhn.hapi</groupId>
+                <artifactId>hapi-base</artifactId>
+                <version>${hapi.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>jboss</groupId>
+                        <artifactId>jboss-j2ee</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>ca.uhn.hapi</groupId>
+                <artifactId>hapi-structures-v251</artifactId>
+                <version>${hapi.version}</version>
+            </dependency>
+
+            <!-- Poi ooxml - generate Excel files -->
+
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml</artifactId>
+                <version>${poi-ooxml.version}</version>
+            </dependency>
+
+            <!-- Better query logging options + display parameters -->
+
+            <dependency>
+                <groupId>net.ttddyy</groupId>
+                <artifactId>datasource-proxy</artifactId>
+                <version>${datasource-proxy-version}</version>
+            </dependency>
+
+            <!-- Oracle -->
+
+            <dependency>
+                <groupId>oracle</groupId>
+                <artifactId>ojdbc6</artifactId>
+                <version>${oracle-jdbc.version}</version>
+            </dependency>
+
+            <!--Other -->
+
+            <dependency>
+                <groupId>org.owasp.encoder</groupId>
+                <artifactId>encoder</artifactId>
+                <version>${html.encoder.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.jboss.resteasy</groupId>
+                <artifactId>resteasy-client</artifactId>
+                <version>${resteasy.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.mail</groupId>
+                <artifactId>mail</artifactId>
+                <version>${javax-mail.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-logging</groupId>
+                <artifactId>commons-logging</artifactId>
+                <version>${commons-logging.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.owasp.encoder</groupId>
+                <artifactId>encoder-jsp</artifactId>
+                <version>${html.encoder.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.ibm.icu</groupId>
+                <artifactId>icu4j</artifactId>
+                <version>${icu4j.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-api</artifactId>
+                <version>${junit-jupiter-api.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.keycloak.bom</groupId>
+                <artifactId>keycloak-adapter-bom</artifactId>
+                <version>${keycloak.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>${servlet-api.version}</version>
+            </dependency>
+
+            <!-- Better Auditing-->
+
+            <dependency>
+                <groupId>care.better.auditing</groupId>
+                <artifactId>auditing</artifactId>
+                <version>${auditing.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>care.better.auditing</groupId>
+                <artifactId>audit-queue</artifactId>
+                <version>${audit-queue.version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+</project>

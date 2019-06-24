@@ -1,0 +1,19 @@
+<div data-tm-flex-layout="row" data-align-items="flex-start" class="patient-banner">
+    <div data-tm-flex-item="0 0 auto">
+        <img class="patient-avatar" data-ng-src="{{::dto.patientImagePath | tmPictureUrlFilter}}">
+    </div>
+    <div class="patient-display-info" data-tm-flex-item="1 1 auto" data-tm-flex-layout="column" data-align-items="stretch">
+        <div class="TextDataBold text-line-height patient-name" data-tm-flex-item="0 0 auto">{{::dto.name}}</div>
+        <div class="text-line-height" data-tm-flex-item="1 1 auto" data-tm-flex-layout="row" data-align-items="flex-start"
+             data-tm-flex-wrap="wrap">
+            <div data-tm-flex-item="0 0 auto">{{::dto.birthDate | tmDateFilter }}</div>
+            <div data-tm-flex-item="0 0 auto" class="patient-data-margin">
+                -&nbsp;{{::dto.birthDate | tmPatientAgeFilter }}
+            </div>
+            <div data-tm-flex-item="0 0 auto" class="patient-data-margin">
+                -&nbsp;{{'Gender.' + dto.gender + '.short' | tmDictionaryTermFilter}}
+            </div>
+        </div>
+        <div class="text-line-height" data-tm-flex-item="0 0 auto">{{::dto.bisNumber}}</div>
+    </div>
+</div>

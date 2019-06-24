@@ -1,0 +1,10 @@
+<div class="meds-therapy-description" data-tm-flex-layout="row" data-align-items="flex-start"
+     data-ng-class="vm.getStatusClass()">
+    <div class="status-line" data-tm-flex-item="0 0 5px" data-align-self="stretch"></div>
+    <meds-therapy-icon data-tm-flex-item="0 0 auto" data-dto="vm.getDto()"></meds-therapy-icon>
+    <div data-tm-flex-item="1 1 auto" data-tm-flex-layout="column" data-align-items="flex-start"
+         class="therapy-description">
+        <div data-ng-bind-html="vm.getFormattedDescription()" data-tm-flex-item="0 0 auto"></div>
+        <div ng-transclude></div>
+    </div>
+</div>

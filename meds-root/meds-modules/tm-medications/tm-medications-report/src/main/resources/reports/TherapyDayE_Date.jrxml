@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2018-09-20T16:35:02 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="TherapyDayE_Date" pageWidth="802" pageHeight="555" orientation="Landscape" columnWidth="802" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="2f97faa4-1ed9-4df2-8e30-31f608aba973">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="initData" class="com.marand.ispek.print.jasperreports.IspekJasperReportInitData"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="date" class="java.lang.String">
+		<fieldDescription><![CDATA[date]]></fieldDescription>
+	</field>
+	<field name="therapyDayReportAdministrationDtos" class="java.util.List">
+		<fieldDescription><![CDATA[therapyDayReportAdministrationDtos]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="90" height="15" uuid="c6edc089-b18a-4005-9ff5-893d58b0e256">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement x="90" y="0" width="210" height="15" uuid="b21044ae-f979-4dee-b6fb-00f6b0a0725f">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<subreportParameter name="initData">
+					<subreportParameterExpression><![CDATA[$P{initData}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{therapyDayReportAdministrationDtos})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{initData}.getSubreportsDir() + "TherapyDayE_Administration.jasper"]]></subreportExpression>
+			</subreport>
+			<rectangle>
+				<reportElement stretchType="RelativeToBandHeight" mode="Transparent" x="0" y="0" width="375" height="15" uuid="c6283d72-c616-41a2-ad70-6e0a1f04669a"/>
+				<graphicElement>
+					<pen lineWidth="0.1"/>
+				</graphicElement>
+			</rectangle>
+		</band>
+	</detail>
+</jasperReport>

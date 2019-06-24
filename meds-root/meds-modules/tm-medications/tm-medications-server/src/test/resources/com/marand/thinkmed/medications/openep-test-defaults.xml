@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:tx="http://www.springframework.org/schema/tx"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <import resource="classpath:com/marand/maf_test/tc-h2.xml"/>
+
+    <tx:annotation-driven transaction-manager="hibernateTransactionManager" order="200"/>
+
+    <bean id="hibernateTransactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+        <property name="sessionFactory" ref="hibernateSessionFactory"/>
+    </bean>
+
+    <bean id="hibernateSessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+        <property name="dataSource" ref="hibernateDataSource"/>
+        <property name="packagesToScan" ref="hibernatePackages"/>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">com.marand.maf.core.hibernate.dialect.H2Oracle11XmlDialect</prop>
+                <prop key="hibernate.implicit_naming_strategy">com.marand.maf.core.hibernate.cfg.ImplicitUnderscoreNamingStrategy</prop>
+                <prop key="hibernate.physical_naming_strategy">com.marand.maf.core.hibernate.cfg.PhysicalUnderscoreNamingStrategy</prop>
+                <prop key="hibernate.cache.use_second_level_cache">false</prop>
+                <prop key="hibernate.cache.use_query_cache">false</prop>
+                <prop key="hibernate.jdbc.fetch_size">512</prop>
+                <prop key="hibernate.jdbc.batch_size">512</prop>
+                <prop key="hibernate.bytecode.provider">javassist</prop>
+                <prop key="hibernate.hbm2ddl.auto">create-drop</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="requestScopeTime" class="com.marand.thinkmed.request.time.RequestScopeTime"/>
+
+    <bean id="temporalContextProvider" class="com.marand.thinkmed.medications.config.RequestTimeTemporalContextProvider"/>
+    <bean id="requestDateTimeHolder" class="com.marand.thinkmed.request.time.RequestDateTimeHolder"/>
+
+    <bean id="entityDao" class="com.marand.maf.core.server.entity.dao.hibernate.HibernateEntityDao"/>
+
+</beans>

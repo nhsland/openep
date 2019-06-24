@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <import resource="classpath:com/marand/thinkmed/medications/openep-test-defaults.xml"/>
+    <import resource="classpath:/com/marand/thinkmed/medications/ac-hibernate-packages.xml"/>
+
+    <!-- DAOs-->
+
+    <bean id="medicationsDao" class="com.marand.thinkmed.medications.dao.hibernate.HibernateMedicationsDao"/>
+
+    <bean id="requestScopeTime" class="com.marand.thinkmed.request.time.RequestScopeTime"/>
+
+    <bean id="requestDateTimeHolder" class="com.marand.thinkmed.request.time.RequestDateTimeHolder"/>
+
+    <bean id="unitsDao" class="org.mockito.Mockito" factory-method="mock">
+        <constructor-arg value="com.marand.thinkmed.medications.units.dao.UnitsDao"/>
+    </bean>
+
+    <bean id="doseUtils" class="org.mockito.Mockito" factory-method="mock">
+        <constructor-arg value="com.marand.thinkmed.medications.dose.DoseUtils"/>
+    </bean>
+
+    <bean id="doseFormDtoMapper" class="com.marand.thinkmed.medications.mapper.DoseFormDtoMapper"/>
+
+    <bean id="medicationsBo" class="org.mockito.Mockito" factory-method="mock">
+        <constructor-arg value="com.marand.thinkmed.medications.business.MedicationsBo"/>
+    </bean>
+
+    <bean id="medsProperties" class="org.mockito.Mockito" factory-method="mock">
+        <constructor-arg value="com.marand.thinkmed.medications.config.MedsProperties"/>
+    </bean>
+
+    <bean id="therapyDisplayProvider" class="org.mockito.Mockito" factory-method="mock">
+        <constructor-arg value="com.marand.thinkmed.medications.business.impl.TherapyDisplayProvider"/>
+    </bean>
+
+    <bean id="releaseDetailsDisplayProvider" class="org.mockito.Mockito" factory-method="mock">
+        <constructor-arg value="com.marand.thinkmed.medications.business.impl.ReleaseDetailsDisplayProvider"/>
+    </bean>
+
+    <bean id="medicationsValueHolderProvider" class="org.mockito.Mockito" factory-method="mock">
+        <constructor-arg value="com.marand.thinkmed.medications.valueholder.MedicationsValueHolderProvider"/>
+    </bean>
+
+    <bean id="unitsProvider" class="org.mockito.Mockito" factory-method="mock">
+        <constructor-arg value="com.marand.thinkmed.medications.units.provider.TestUnitsProviderImpl"/>
+    </bean>
+
+</beans>

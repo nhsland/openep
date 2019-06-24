@@ -1,0 +1,868 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2019-02-19T18:49:24 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="TherapyDayF" pageWidth="802" pageHeight="555" orientation="Landscape" columnWidth="802" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="cb15785b-299d-4623-94d1-b78923ce11ee">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<template><![CDATA[$P{initData}.getStylesDir() + "TherapyDay_Styles.jrtx"]]></template>
+	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Dataset1" uuid="4645f534-af10-4548-a888-a39d64a4108c">
+		<parameter name="prnElements" class="java.util.List"/>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+	</subDataset>
+	<parameter name="prnElements" class="java.util.List"/>
+	<parameter name="initData" class="com.marand.ispek.print.jasperreports.IspekJasperReportInitData"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="administrations" class="java.util.List">
+		<fieldDescription><![CDATA[administrations]]></fieldDescription>
+	</field>
+	<field name="therapyReportStatusEnum" class="com.marand.thinkmed.medications.TherapyReportStatusEnum">
+		<fieldDescription><![CDATA[therapyReportStatusEnum]]></fieldDescription>
+	</field>
+	<field name="customGroupSortOrder" class="java.lang.Integer">
+		<fieldDescription><![CDATA[customGroupSortOrder]]></fieldDescription>
+	</field>
+	<field name="consecutiveDayLabel" class="java.lang.String">
+		<fieldDescription><![CDATA[consecutiveDayLabel]]></fieldDescription>
+	</field>
+	<field name="showTherapyConsecutiveDay" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[showTherapyConsecutiveDay]]></fieldDescription>
+	</field>
+	<field name="therapyEnd" class="java.lang.String">
+		<fieldDescription><![CDATA[therapyEnd]]></fieldDescription>
+	</field>
+	<field name="currentRate" class="java.lang.String">
+		<fieldDescription><![CDATA[currentRate]]></fieldDescription>
+	</field>
+	<field name="doseDescription" class="java.lang.String">
+		<fieldDescription><![CDATA[doseDescription]]></fieldDescription>
+	</field>
+	<field name="therapyConsecutiveDay" class="java.lang.String">
+		<fieldDescription><![CDATA[therapyConsecutiveDay]]></fieldDescription>
+	</field>
+	<field name="currentOxygenDevice" class="java.lang.String">
+		<fieldDescription><![CDATA[currentOxygenDevice]]></fieldDescription>
+	</field>
+	<field name="therapyStart" class="java.lang.String">
+		<fieldDescription><![CDATA[therapyStart]]></fieldDescription>
+	</field>
+	<field name="customGroupName" class="java.lang.String">
+		<fieldDescription><![CDATA[customGroupName]]></fieldDescription>
+	</field>
+	<field name="dateDoseTime" class="java.util.Map">
+		<fieldDescription><![CDATA[dateDoseTime]]></fieldDescription>
+	</field>
+	<field name="hourDoseTime" class="java.util.List">
+		<fieldDescription><![CDATA[hourDoseTime]]></fieldDescription>
+	</field>
+	<field name="pharmacistsReviewState" class="com.marand.thinkmed.medications.dto.pharmacist.review.TherapyPharmacistReviewStatusEnum">
+		<fieldDescription><![CDATA[pharmacistsReviewState]]></fieldDescription>
+	</field>
+	<field name="order" class="com.marand.thinkmed.medications.api.internal.dto.ComplexTherapyDto">
+		<fieldDescription><![CDATA[order]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="221" splitType="Stretch">
+			<textField>
+				<reportElement x="285" y="0" width="60" height="40" uuid="bf573494-f595-4406-86a9-72cf99cc652c">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getDictionaryEntry("date", $P{REPORT_LOCALE})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="285" y="40" width="60" height="40" uuid="de432e10-5640-4f5e-9bbb-413d68bec792">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getDictionaryEntry("time", $P{REPORT_LOCALE})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="285" y="80" width="60" height="40" uuid="37c5e3fa-3735-402b-a9f0-298d3cebb8af">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getDictionaryEntry("dose", $P{REPORT_LOCALE})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="285" y="120" width="60" height="40" uuid="13367242-9c48-475b-b5ba-f29868d74304">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getDictionaryEntry("giver", $P{REPORT_LOCALE})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="285" y="160" width="60" height="40" uuid="d84de1d8-f844-4a88-b0eb-a196e172d902">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getDictionaryEntry("checker", $P{REPORT_LOCALE})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="345" y="0" width="55" height="40" uuid="1399123f-9d85-4f47-8584-8a79ee3487b4">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getPrnX($F{therapyReportStatusEnum})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="345" y="40" width="55" height="40" uuid="01e14685-4ca3-4403-960f-84fe77cc2941">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getPrnX($F{therapyReportStatusEnum})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="345" y="80" width="55" height="40" uuid="6b988b2b-aace-49e3-89f1-8a645649d5f2">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getPrnX($F{therapyReportStatusEnum})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="345" y="120" width="55" height="40" uuid="41a064fd-e3c7-40a5-b670-0ba93323e4cd">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getPrnX($F{therapyReportStatusEnum})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="345" y="160" width="55" height="40" uuid="8bf87834-1063-4301-8516-24efb67f68b0">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getPrnX($F{therapyReportStatusEnum})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="400" y="0" width="55" height="40" uuid="28421003-dbfd-40ec-b10f-c17ae8dd37ff">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getPrnX($F{therapyReportStatusEnum})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="400" y="40" width="55" height="40" uuid="467f880f-fbde-4c69-b5d6-e924a0c5c54d">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getPrnX($F{therapyReportStatusEnum})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="400" y="80" width="55" height="40" uuid="0f09fa02-37ee-4a76-9677-cc9ef076fdc8">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getPrnX($F{therapyReportStatusEnum})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="400" y="120" width="55" height="40" uuid="bba2e07f-3943-4e28-bbec-2ca873857e59">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getPrnX($F{therapyReportStatusEnum})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="400" y="160" width="55" height="40" uuid="2a08036f-2547-4375-9f6a-b2e362ba7d11">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getPrnX($F{therapyReportStatusEnum})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="455" y="0" width="55" height="40" uuid="9d11ba1e-b9c5-410a-bb97-7bd7c438d850">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getPrnX($F{therapyReportStatusEnum})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="455" y="40" width="55" height="40" uuid="49646cd5-3955-405e-beda-76abcdf89ecf">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getPrnX($F{therapyReportStatusEnum})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="455" y="80" width="55" height="40" uuid="07173f27-aa3d-4767-8a01-bdc3281c6729">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getPrnX($F{therapyReportStatusEnum})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="455" y="120" width="55" height="40" uuid="b00a6e3c-65ba-4e11-800a-8520aa31664d">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getPrnX($F{therapyReportStatusEnum})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="455" y="160" width="55" height="40" uuid="d9b2c971-5a5f-4006-be06-43f3c179a518">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getPrnX($F{therapyReportStatusEnum})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="510" y="0" width="55" height="40" uuid="2884a18c-7c8b-4d30-adf5-79c4d141178b">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getPrnX($F{therapyReportStatusEnum})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="510" y="40" width="55" height="40" uuid="00c87867-7e5b-477e-a07e-cf9eb75fe3d9">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getPrnX($F{therapyReportStatusEnum})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="510" y="80" width="55" height="40" uuid="6591f046-1cb1-489d-a598-ee8d3a5aaa92">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getPrnX($F{therapyReportStatusEnum})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="510" y="120" width="55" height="40" uuid="d5e3cca2-a281-43b6-8e10-a18a8d4fbac0">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getPrnX($F{therapyReportStatusEnum})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="510" y="160" width="55" height="40" uuid="a9cc6b2b-2d90-438d-aab0-bc7726b1c93a">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getPrnX($F{therapyReportStatusEnum})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="565" y="0" width="55" height="40" uuid="676bb74b-b98a-4d09-971b-25073defecfa">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getPrnX($F{therapyReportStatusEnum})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="565" y="40" width="55" height="40" uuid="0b43acf0-de15-40da-bbc4-28c5b76ae75b">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getPrnX($F{therapyReportStatusEnum})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="565" y="80" width="55" height="40" uuid="f2979f07-ade2-4ce6-b11f-512d48fb28a3">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getPrnX($F{therapyReportStatusEnum})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="565" y="120" width="55" height="40" uuid="c340c0a4-6b94-4130-b33f-0b2670ee0cd6">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getPrnX($F{therapyReportStatusEnum})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="565" y="160" width="55" height="40" uuid="73a6be6b-ccb6-4e80-a7be-d8f026985e2f">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getPrnX($F{therapyReportStatusEnum})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="620" y="0" width="55" height="40" uuid="93af63a6-d3b5-4fa9-b8ac-79c451c1f68b">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getPrnX($F{therapyReportStatusEnum})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="620" y="40" width="55" height="40" uuid="3a344c90-fabf-4bf5-b73a-7f6fc227dbc4">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getPrnX($F{therapyReportStatusEnum})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="620" y="80" width="55" height="40" uuid="7a4452ae-0810-42af-b667-3b66a2c39436">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getPrnX($F{therapyReportStatusEnum})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="620" y="120" width="55" height="40" uuid="2ed26f41-5631-490d-b7bd-bd406be7fb2a">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getPrnX($F{therapyReportStatusEnum})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="620" y="160" width="55" height="40" uuid="bf6ddbc5-58c2-477f-b593-ba467bdc1686">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getPrnX($F{therapyReportStatusEnum})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="675" y="0" width="55" height="40" uuid="354cd931-83d9-40c7-a7b7-5289810e4221">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getPrnX($F{therapyReportStatusEnum})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="675" y="40" width="55" height="40" uuid="84ef8e5b-43d5-4ca9-b92e-8a24cc4c6d2d">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getPrnX($F{therapyReportStatusEnum})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="675" y="80" width="55" height="40" uuid="49c4dd66-d618-46cf-8dca-7f2324c59b8a">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getPrnX($F{therapyReportStatusEnum})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="675" y="120" width="55" height="40" uuid="c97c24b4-133c-4d9e-a04c-7dbd6fb9a19d">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getPrnX($F{therapyReportStatusEnum})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="675" y="160" width="55" height="40" uuid="2097d09c-b747-4251-8e73-623a7578cad0">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getPrnX($F{therapyReportStatusEnum})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="730" y="0" width="55" height="40" uuid="aa94d021-829f-464a-82a3-bf1b04bb4aba">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getPrnX($F{therapyReportStatusEnum})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="730" y="40" width="55" height="40" uuid="a3f5e894-0e3b-42ff-bfb0-8bc261543003">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getPrnX($F{therapyReportStatusEnum})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="730" y="80" width="55" height="40" uuid="ee43e3fd-e13b-4a53-b55b-af92b2c655df">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getPrnX($F{therapyReportStatusEnum})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="730" y="120" width="55" height="40" uuid="8663e5f9-35a4-4aba-86aa-f8c3c4c7588a">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getPrnX($F{therapyReportStatusEnum})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="730" y="160" width="55" height="40" uuid="f54e8b6c-8c5b-4f6a-a8f0-e038c5018916">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getPrnX($F{therapyReportStatusEnum})]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="785" height="210" uuid="baacae59-990a-4bf8-a4a0-50d88eb01bfe"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<subreport isUsingCache="false">
+					<reportElement key="" mode="Transparent" x="-2" y="0" width="285" height="12" uuid="a071e387-eebb-47c6-9e9b-a07a49606201">
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<parametersMapExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}]]></parametersMapExpression>
+					<subreportParameter name="baselineInfusionDisplay">
+						<subreportParameterExpression><![CDATA[$F{order}.getBaselineInfusionDisplay()]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="therapyConsecutiveDay">
+						<subreportParameterExpression><![CDATA[$F{therapyConsecutiveDay}]]></subreportParameterExpression>
+					</subreportParameter>
+					<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{order}.getIngredientsList())]]></dataSourceExpression>
+					<subreportExpression><![CDATA[$P{initData}.getSubreportsDir() + "TherapyDayA_Complex_Medication.jasper"]]></subreportExpression>
+				</subreport>
+				<textField>
+					<reportElement positionType="FixRelativeToBottom" x="-2" y="161" width="285" height="39" uuid="9ce81474-0bf5-45ad-ae7f-5de2ec4f1178">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getBarcodeLabel($P{REPORT_LOCALE})]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement style="dataBorder" positionType="Float" stretchType="RelativeToBandHeight" x="-2" y="13" width="285" height="20" isRemoveLineWhenBlank="true" uuid="3a914105-d729-4680-a882-64970a80c224">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box topPadding="1" leftPadding="2" bottomPadding="1" rightPadding="2"/>
+					<textElement markup="html">
+						<font isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getPastTherapyCombinedDisplay($F{order}, $F{therapyStart}, $F{therapyEnd}, $F{therapyReportStatusEnum}, $P{REPORT_LOCALE}, $F{currentRate}, $F{therapyConsecutiveDay}, $F{showTherapyConsecutiveDay}, $F{consecutiveDayLabel}, $F{currentOxygenDevice}, null)]]></textFieldExpression>
+				</textField>
+			</frame>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="smallLabel" positionType="Float" mode="Opaque" x="285" y="200" width="500" height="10" isPrintWhenDetailOverflows="true" uuid="ff548aa5-44b2-45e5-8308-18c5f4d79ba7">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.25" lineStyle="Solid" lineColor="#666666"/>
+					<leftPen lineWidth="0.25" lineStyle="Solid" lineColor="#666666"/>
+					<bottomPen lineWidth="0.25" lineStyle="Solid" lineColor="#666666"/>
+					<rightPen lineWidth="0.25" lineStyle="Solid" lineColor="#666666"/>
+				</box>
+				<textElement verticalAlignment="Top" markup="html"/>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getWarnings($F{order}, $P{REPORT_LOCALE})]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

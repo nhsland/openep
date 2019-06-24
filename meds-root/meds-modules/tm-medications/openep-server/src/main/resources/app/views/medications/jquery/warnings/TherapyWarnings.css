@@ -1,0 +1,82 @@
+.v-therapy-view .reconciliation-container .warnings-container,
+.v-therapy-view .medications-ordering-container .warnings-container {
+    border-top: 1px solid #d6d6d6;
+}
+
+.v-therapy-view .warnings-container .severity {
+    background: no-repeat center top;
+}
+
+/****** ICONS ******/
+.v-therapy-view .warnings-container-row .icon-monograph {
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-image: url('${context.path}/resources/images/icons/document_24.png');
+}
+
+.v-therapy-view .warnings-container-row .severity.icon-high {
+    background-image: url('${context.path}/resources/images/icons/warningRed_status_24.png');
+}
+
+.v-therapy-view .warnings-legend {
+    padding: 5px 5px 5px 5px;
+}
+
+/* max dose */
+.v-therapy-view .max-dose-low-icon,
+.v-therapy-view .max-dose-significant-icon,
+.v-therapy-view .max-dose-high-icon,
+.v-therapy-view .cumulative-percentage-high-icon {
+    background-position: center center;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    margin: 0px 5px 0px 5px;
+}
+
+.v-therapy-view .medications-ordering-container .max-dose-low-icon,
+.v-therapy-view .medications-ordering-container .max-dose-significant-icon,
+.v-therapy-view .medications-ordering-container .max-dose-high-icon {
+    cursor: pointer;
+}
+
+.v-therapy-view .max-dose-low-icon {
+    background-image: url('${context.path}/resources/images/icons/bnf_green.png');
+}
+.v-therapy-view .max-dose-significant-icon {
+    background-image: url('${context.path}/resources/images/icons/bnf_yellow.png');
+}
+.v-therapy-view .max-dose-high-icon {
+    background-image: url('${context.path}/resources/images/icons/bnf_red.png');
+}
+
+.v-therapy-view .cumulative-percentage-high-icon {
+    background-image: url('${context.path}/resources/images/icons/warningRed_status_16.png');
+}
+
+.v-therapy-view .reconciliation-container .warnings-container,
+.v-therapy-view .medications-ordering-container .warnings-container {
+    min-height: 50px !important;
+    max-height: 300px !important;
+}
+
+.v-therapy-view .warnings-container .warnings-message-container,
+.v-therapy-view .warnings-container .empty-message {
+    padding: 5px 10px;
+}
+
+.v-therapy-view .warnings-container .warning-row-with-icon {
+    padding-left: 5px;
+}
+
+.v-therapy-view .warnings-container .warning-row-no-icon {
+    padding-left: 35px;
+}
+
+.v-therapy-view .warnings-container .show-all-warnings-btn {
+    padding-left: 7px !important;
+}
+
+.v-therapy-view .warnings-container .show-all-warnings-btn > div {
+    font-size: 18px;
+}

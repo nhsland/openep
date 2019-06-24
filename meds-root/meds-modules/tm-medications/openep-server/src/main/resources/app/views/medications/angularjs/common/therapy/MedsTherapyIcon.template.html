@@ -1,0 +1,13 @@
+<div class="therapy-icon" data-ng-class="vm.getBigIconClass()">
+    <div class="status-icon icon_changed" data-ng-if="vm.isChanged()"></div>
+    <div class="status-icon self-administering" data-ng-class="vm.getSelfAdministeringIconClass()"
+         data-ng-if="vm.getSelfAdministeringIconClass()"></div>
+    <div class="status-icon icon_day_number" data-ng-class="vm.getConsecutiveDay()" data-ng-if="vm.getConsecutiveDay()">
+        {{vm.getConsecutiveDay()}}
+    </div>
+    <div class="status-icon icon_link" data-ng-class="vm.getTherapyLinkName()" data-ng-if="vm.getTherapyLinkName()">
+        {{vm.getTherapyLinkName()}}
+    </div>
+    <div class="status-icon therapy-status" data-ng-class="vm.getStatusIconClass()"
+         data-ng-if="vm.getStatusIconClass()"></div>
+</div>

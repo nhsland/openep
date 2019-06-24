@@ -1,0 +1,71 @@
+{
+  "items": [
+    {
+      "id": "8c2cd9fa-eaab-41c6-adfa-a2514e7cd624|Medication instruction",
+      "prescription": {
+        "medication": {
+          "id": "33",
+          "name": "Morphine",
+          "controlledDrug": true
+        },
+        "routes": {
+          "display": "Oral",
+          "items": [
+            {
+              "name": "Oral"
+            }
+          ]
+        },
+        "dose": {
+          "items": [
+            {
+              "display": "15 mg"
+            }
+          ]
+        },
+        "timingDirections": {
+          "display": "Morning"
+        },
+        "doseForm": null,
+        "comment": null,
+        "indication": null,
+        "additionalInstructions": null
+      },
+      "discharge": {
+        "durationInDays": null,
+        "dispenseSource": {
+          "name": "Pharmacy"
+        },
+        "quantities": [
+          {
+            "display": "Morphine 10mg capsules - (20) twenty capsule",
+            "medication": {
+              "display": "Morphine 10mg capsules"
+            },
+            "quantity": {
+              "value": "20",
+              "unit": "capsule",
+              "display": "20 capsule",
+              "textValue": "twenty"
+            }
+          },
+          {
+            "display": "Morphine 5mg capsules - (20) twenty capsule",
+            "medication": {
+              "display": "Morphine 5mg capsules"
+            },
+            "quantity": {
+              "value": "20",
+              "unit": "capsule",
+              "display": "20 capsule",
+              "textValue": "twenty"
+            }
+          }
+        ],
+        "additionalData": []
+      },
+      "status": "UNCHANGED",
+      "statusReason": null
+    }
+  ]
+}

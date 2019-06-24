@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>OPENeP Example</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+            overflow: visible;
+            font-size: 100%;
+        }
+
+        #openep-viewer-render-container {
+            margin: 20px;
+            border: 1px solid black;
+            height: 75%;
+        }
+    </style>
+
+    <script type="text/javascript" src="htmlproxy.all.min.js"></script>
+
+    <script type="text/javascript">
+      var htmlProxyViewer = null;
+      var selectedViewType = "therapyView";
+
+      function Init(viewType)
+      {
+        document.getElementById('patientId').value = null;
+        if (viewType)
+        {
+          selectedViewType = viewType;   
+        }
+        // therapy //
+        var target = {
+           // host: "http://localhost:7778",
+          host: "http://openep2.thinkmed.marand.si:7778",
+          context: "rest",
+          controller: "medications",
+          view: selectedViewType,
+          data: null
+        };
+
+        var security = "97281c70-0240-46a0-aba2-c389f155affd";
+
+        htmlProxyViewer = tm.plugin.htmlproxy.Viewer.create({
+          name: "OpenEp",
+          target: target,
+          security: security,
+          renderElement: document.querySelector("#openep-viewer-render-container")
+        });
+        htmlProxyViewer.onReady(function()
+        {
+          console.log("viewer.onReady");
+          sendUpdateCommand();
+        });
+        htmlProxyViewer.onError(function(cause, params)
+        {
+          console.log("viewer.onError", cause, params);
+        });
+        htmlProxyViewer.onAction(function(action)
+        {
+          console.log("viewer.onAction", action);
+        });
+        htmlProxyViewer.onAuthenticationExpired(function()
+        {
+          console.log("viewer.onAuthenticationExpired", this.getSecurity());
+          this.authenticate(security);
+        });
+
+        htmlProxyViewer.load();
+      }
+
+      function sendUpdateCommand(patientId)
+      {
+        if (selectedViewType === "therapyView")
+        {
+          patientId = patientId ? patientId : "bb8768e4-b57e-4782-a7df-7c9f7190a3f2";
+          htmlProxyViewer.sendCommand("update", {data: {"patientId": patientId, subview: "TIMELINE"}});
+        }
+        else
+        {
+          var patientIds = patientId ? patientId.split(",").map(function(item) {
+            return item.trim();
+          }) : ["bb8768e4-b57e-4782-a7df-7c9f7190a3f2"];
+          htmlProxyViewer.sendCommand("update", {data:{"patientIds": patientIds}});
+        }
+      }
+      function sendRefreshCommand()
+      {
+        htmlProxyViewer.sendCommand("refresh");
+      }
+      function sendClearCommand()
+      {
+        htmlProxyViewer.sendCommand("clear");
+      }
+    </script>
+</head>
+
+<body onLoad="Init()">
+<div style="margin: 20px 0 0 20px;">
+    <select id="viewSelectBox">
+        <option value="therapyView">therapyView</option>
+        <option value="nurseTasksView">nurseTasksView</option>
+        <option value="pharmacistTasksView">pharmacistTasksView</option>
+    </select>
+    <button onclick="Init(document.getElementById('viewSelectBox').value)" style="margin-bottom: 5px;">Load view</button>
+</div>
+
+<div id="openep-viewer-render-container">
+</div>
+<br>
+<div style="margin-left: 20px;">
+    <button onclick="sendUpdateCommand(document.getElementById('patientId').value)" style="margin-bottom: 5px;">Send update command</button>
+    <label>Patient id (leave blank for default):</label>
+    <input name="patientIdTextField" id="patientId" type="text" />
+    <br>
+    <button onclick="sendRefreshCommand()" style="margin-bottom: 5px;">Send refresh command</button><br>
+    <button onclick="sendClearCommand()" style="margin-bottom: 5px;">Send clear command</button><br>
+</div>
+
+</body>
+</html>

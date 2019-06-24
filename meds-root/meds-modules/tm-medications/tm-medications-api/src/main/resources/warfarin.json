@@ -1,0 +1,57 @@
+{
+  "items": [
+    {
+      "id": "8c2cd9fa-eaab-41c6-adfa-a2514e7cd624|Medication instruction",
+      "prescription": {
+        "medication": {
+          "id": "22",
+          "name": "Warfarin",
+          "controlledDrug": false
+        },
+        "routes": {
+          "display": "Oral",
+          "items": [
+            {
+              "name": "Oral"
+            }
+          ]
+        },
+        "dose": {
+          "items": [
+            {
+              "display": "6 mg"
+            }
+          ]
+        },
+        "timingDirections": {
+          "display": "2X per day"
+        },
+        "doseForm": null,
+        "comment": {
+          "display": "comment"
+        },
+        "indication": {
+          "display": "indication"
+        },
+        "additionalInstructions": null
+      },
+      "discharge": {
+        "durationInDays": null,
+        "dispenseSource": {
+          "name": "Patients Own"
+        },
+        "quantities": [],
+        "additionalData": [
+          {
+            "key": "targetInr",
+            "value": 5.0
+          }
+        ]
+      },
+      "status": "CHANGED",
+      "statusReason": {
+        "display": "Moderate headache"
+      }
+    }
+  ]
+}

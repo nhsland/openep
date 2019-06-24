@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <parent>
+        <artifactId>tm-medications</artifactId>
+        <groupId>com.marand.thinkmed</groupId>
+        <version>3.7.0-SNAPSHOT</version>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>openep-server</artifactId>
+    <name>OPENeP Server</name>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.security.oauth</groupId>
+            <artifactId>spring-security-oauth2</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-jwt</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>${gson.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>oracle</groupId>
+            <artifactId>ojdbc6</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.zaxxer</groupId>
+            <artifactId>HikariCP</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>mail</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.thinkmed</groupId>
+            <artifactId>tm-process-server</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.jboss.resteasy</groupId>
+                    <artifactId>resteasy-jackson-provider</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.thinkmed</groupId>
+            <artifactId>tm-medications-bpm-server</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.ispek</groupId>
+            <artifactId>ispek-bpm-server</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.thinkmed</groupId>
+            <artifactId>tm-themes-common</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.thinkmed</groupId>
+            <artifactId>tm-clinical-html-ui</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.thinkmed</groupId>
+            <artifactId>tm-momentjs-external</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.thinkmed</groupId>
+            <artifactId>tm-visjs-external</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.thinkmed</groupId>
+            <artifactId>tm-html-ui-common</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.jboss.resteasy</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.thinkmed</groupId>
+            <artifactId>tm-highcharts-external</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.thinkmed</groupId>
+            <artifactId>tm-medications-connector</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.thinkmed</groupId>
+            <artifactId>tm-medications-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.thinkmed</groupId>
+            <artifactId>tm-medications-common</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.maf</groupId>
+            <artifactId>maf-core</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.jboss.resteasy</groupId>
+                    <artifactId>resteasy-jaxrs</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.codehaus.jackson</groupId>
+                    <artifactId>jackson-jaxrs</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.logging.log4j</groupId>
+                    <artifactId>log4j-slf4j-impl</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.fasterxml.jackson*</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.logging.log4j</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.jboss.logging</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.thinkmed</groupId>
+            <artifactId>meds-config-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.thinkmed</groupId>
+            <artifactId>tm-medications-server</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.thinkmed</groupId>
+            <artifactId>tm-medications-connector-impl</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.thinkmed</groupId>
+            <artifactId>tm-fdb-server</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.thinkmed</groupId>
+            <artifactId>tm-elmdoc</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.thinkmed</groupId>
+            <artifactId>tm-medispan</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.thinkmed</groupId>
+            <artifactId>meds-config-updaters</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.thinkmed</groupId>
+            <artifactId>tm-request-cors</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+        </dependency>
+
+        <!-- swagger -->
+
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.marand.meds.app.MedicationsApplication</mainClass>
+                    <executable>true</executable>
+                    <finalName>openep-${project.version}</finalName>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.0.2</version>
+                <configuration>
+                    <archive>
+                        <index>false</index>
+                        <manifestEntries>
+                            <Class-Path>./conf/</Class-Path>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

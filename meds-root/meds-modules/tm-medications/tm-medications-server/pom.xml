@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <parent>
+        <artifactId>tm-medications</artifactId>
+        <groupId>com.marand.thinkmed</groupId>
+        <version>3.7.0-SNAPSHOT</version>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>tm-medications-server</artifactId>
+    <name>Think!Med Medications (Server)</name>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>com.marand.thinkmed</groupId>
+            <artifactId>meds-config-updaters</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>io.springfox</groupId>
+                    <artifactId>springfox-swagger2</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>io.springfox</groupId>
+                    <artifactId>springfox-swagger-ui</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>ch.qos.logback</groupId>
+                    <artifactId>logback-classic</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.security.oauth</groupId>
+            <artifactId>spring-security-oauth2</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-stdlib-jdk8</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.thinkmed</groupId>
+            <artifactId>tm-medications-common</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.thinkmed</groupId>
+            <artifactId>meds-config-updaters</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.thinkmed</groupId>
+            <artifactId>tm-medications-connector</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.thinkmed</groupId>
+            <artifactId>tm-medications-connector-impl</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.ispek</groupId>
+            <artifactId>ispek-ehr-common-server</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.maf</groupId>
+            <artifactId>maf-core-server</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.thinkmed</groupId>
+            <artifactId>tm-medications-bpm-common</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.thinkmed</groupId>
+            <artifactId>tm-medications-report</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.thinkmed</groupId>
+            <artifactId>tm-medications-model</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.thinkmed</groupId>
+            <artifactId>tm-medications-ehr-model</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.thinkmed</groupId>
+            <artifactId>tm-alfresco-common</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.thinkmed</groupId>
+            <artifactId>tm-alfresco-server</artifactId>
+        </dependency>
+
+        <!-- HL7 API - HAPI -->
+
+        <dependency>
+            <groupId>ca.uhn.hapi</groupId>
+            <artifactId>hapi-base</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>ca.uhn.hapi</groupId>
+            <artifactId>hapi-structures-v251</artifactId>
+        </dependency>
+
+
+        <!-- OWASP -->
+
+        <dependency>
+            <groupId>org.owasp.encoder</groupId>
+            <artifactId>encoder</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.owasp.encoder</groupId>
+            <artifactId>encoder-jsp</artifactId>
+        </dependency>
+
+        <!-- Unit Testing -->
+
+        <dependency>
+            <groupId>com.marand.maf</groupId>
+            <artifactId>maf-core-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- request user -->
+
+        <dependency>
+            <groupId>com.marand.thinkmed</groupId>
+            <artifactId>tm-request-oauth2</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.thinkmed</groupId>
+            <artifactId>tm-auditing</artifactId>
+        </dependency>
+
+        <!-- icu4j -->
+
+        <dependency>
+            <groupId>com.ibm.icu</groupId>
+            <artifactId>icu4j</artifactId>
+        </dependency>
+
+        <!-- Think!Ehr -->
+
+        <dependency>
+            <groupId>com.marand.thinkehr</groupId>
+            <artifactId>thinkehr-framework-tdo-common</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.thinkehr</groupId>
+            <artifactId>thinkehr-remoting</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.thinkehr</groupId>
+            <artifactId>thinkehr-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.thinkehr</groupId>
+            <artifactId>thinkehr-tdd-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.thinkehr</groupId>
+            <artifactId>thinkehr-templates-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.thinkehr</groupId>
+            <artifactId>thinkehr-form-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.thinkehr</groupId>
+            <artifactId>thinkehr-query-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.thinkehr</groupId>
+            <artifactId>thinkehr-framework-tdo-converter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.thinkehr</groupId>
+            <artifactId>thinkehr-framework-presentation</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.thinkehr</groupId>
+            <artifactId>thinkehr-framework-session-spring</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.aspectj</groupId>
+                    <artifactId>aspectjrt</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.thinkehr</groupId>
+            <artifactId>thinkehr-framework-session-hibernate5</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.thinkehr</groupId>
+            <artifactId>thinkehr-framework-webtdo</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.thinkehr</groupId>
+            <artifactId>thinkehr-framework-aql</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.thinkehr</groupId>
+            <artifactId>thinkehr-framework-mapper</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.thinkehr</groupId>
+            <artifactId>thinkehr-ext-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.thinkehr</groupId>
+            <artifactId>thinkehr-model</artifactId>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+
+            <!-- enable kotlin -->
+
+            <plugin>
+                <artifactId>kotlin-maven-plugin</artifactId>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <version>${kotlin.version}</version>
+                <executions>
+                    <execution>
+                        <id>compile</id>
+                        <goals> <goal>compile</goal> </goals>
+                        <configuration>
+                            <sourceDirs>
+                                <sourceDir>src/main/kotlin</sourceDir>
+                                <sourceDir>src/main/java</sourceDir>
+                            </sourceDirs>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>test-compile</id>
+                        <goals> <goal>test-compile</goal> </goals>
+                        <configuration>
+                            <sourceDirs>
+                                <sourceDir>${project.basedir}/src/test/kotlin</sourceDir>
+                                <sourceDir>src/test/java</sourceDir>
+                            </sourceDirs>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.0</version>
+                <executions>
+                    <!-- Replacing default-compile as it is treated specially by maven -->
+                    <execution>
+                        <id>default-compile</id>
+                        <phase>none</phase>
+                    </execution>
+                    <!-- Replacing default-testCompile as it is treated specially by maven -->
+                    <execution>
+                        <id>default-testCompile</id>
+                        <phase>none</phase>
+                    </execution>
+                    <execution>
+                        <id>java-compile</id>
+                        <phase>compile</phase>
+                        <goals> <goal>compile</goal> </goals>
+                    </execution>
+                    <execution>
+                        <id>java-test-compile</id>
+                        <phase>test-compile</phase>
+                        <goals> <goal>testCompile</goal> </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+
+</project>

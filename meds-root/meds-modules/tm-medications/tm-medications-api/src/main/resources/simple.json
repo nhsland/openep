@@ -1,0 +1,59 @@
+{
+  "items": [
+    {
+      "id": "8c2cd9fa-eaab-41c6-adfa-a2514e7cd624|Medication instruction",
+      "prescription": {
+        "medication": {
+          "id": "11",
+          "name": "Paracetamol 500 mg tablet",
+          "controlledDrug": false
+        },
+        "routes": {
+          "display": "Oral",
+          "items": [
+            {
+              "name": "Oral"
+            }
+          ]
+        },
+        "dose": {
+          "items": [
+            {
+              "display": "500 mg"
+            }
+          ]
+        },
+        "timingDirections": {
+          "display": "Every 8 hours"
+        },
+        "doseForm": {
+          "name": "Tablet"
+        },
+        "comment": {
+          "display": "comment"
+        },
+        "indication": {
+          "display": "indication"
+        },
+        "additionalInstructions": {
+          "display": "Before meal",
+          "items": {
+            "display": "Before meal"
+          }
+        }
+      },
+      "discharge": {
+        "durationInDays": 10,
+        "dispenseSource": {
+          "name": "Pharmacy"
+        },
+        "quantities": [],
+        "additionalData": []
+      },
+      "status": "NEW",
+      "statusReason": {
+        "display": "Moderate headache"
+      }
+    }
+  ]
+}

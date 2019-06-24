@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2018-11-13T09:28:28 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="eReceptSummary" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6e8936ff-e319-47ce-868f-00c38709f45f">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<template><![CDATA[$P{initData}.getStylesDir() + "TherapyDay_Styles.jrtx"]]></template>
+	<subDataset name="Dataset1" uuid="381e891f-c182-4d08-a8e0-f686fd52c1d1">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+	</subDataset>
+	<parameter name="initData" class="com.marand.ispek.print.jasperreports.IspekJasperReportInitData"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="prescriber" class="java.lang.String">
+		<fieldDescription><![CDATA[prescriber]]></fieldDescription>
+	</field>
+	<field name="patientName" class="java.lang.String">
+		<fieldDescription><![CDATA[patientName]]></fieldDescription>
+	</field>
+	<field name="gender" class="com.marand.thinkmed.api.demographics.data.Gender">
+		<fieldDescription><![CDATA[gender]]></fieldDescription>
+	</field>
+	<field name="ward" class="java.lang.String">
+		<fieldDescription><![CDATA[ward]]></fieldDescription>
+	</field>
+	<field name="dateOfPrescription" class="java.lang.String">
+		<fieldDescription><![CDATA[dateOfPrescription]]></fieldDescription>
+	</field>
+	<field name="birthDate" class="java.lang.String">
+		<fieldDescription><![CDATA[birthDate]]></fieldDescription>
+	</field>
+	<field name="class" class="java.lang.Class">
+		<fieldDescription><![CDATA[class]]></fieldDescription>
+	</field>
+	<field name="prescriptions" class="java.util.List">
+		<fieldDescription><![CDATA[prescriptions]]></fieldDescription>
+	</field>
+	<field name="prescriptionsPackageId" class="java.lang.String">
+		<fieldDescription><![CDATA[prescriptionsPackageId]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="225" splitType="Stretch">
+			<textField>
+				<reportElement x="310" y="0" width="240" height="30" uuid="64dfa18f-d52b-44f9-abbf-aeb3c6f712f8"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.OutpatientPrescriptionPrintoutUtils.getNumberOfPrescriptionGroupLabel($P{REPORT_LOCALE})+$F{prescriptionsPackageId}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="310" y="29" width="240" height="30" uuid="c3bfc08c-982e-486f-ba95-5d4bf2d227dd"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.OutpatientPrescriptionPrintoutUtils.getPrescriberLabel($P{REPORT_LOCALE})+$F{prescriber}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="310" y="60" width="240" height="30" uuid="566133ba-9604-4351-b3d2-22cfb72e48e8"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.OutpatientPrescriptionPrintoutUtils.getWardLabel($P{REPORT_LOCALE})+$F{ward}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="310" y="90" width="240" height="30" uuid="c54faf2e-16f3-4c8d-bcbb-6bfe6c8c11da"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.OutpatientPrescriptionPrintoutUtils.getPrescriptionDateLabel($P{REPORT_LOCALE})+$F{dateOfPrescription}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="30" width="240" height="30" uuid="8079394f-b8e1-4bfd-a0bb-0a55e270d627"/>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.OutpatientPrescriptionPrintoutUtils.getPatientDateOfBirthLabel($P{REPORT_LOCALE})+$F{birthDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="60" width="240" height="30" uuid="080b85bf-c2ee-428f-b592-1068ccc2824b"/>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.OutpatientPrescriptionPrintoutUtils.getPatientGender($P{REPORT_LOCALE}, $F{gender})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="2" y="180" width="550" height="30" uuid="c29f6943-9b3b-4945-8552-a53a3ffd7ff7"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.OutpatientPrescriptionPrintoutUtils.getHeader($P{REPORT_LOCALE})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="240" height="30" uuid="ea2ccf0b-0434-4139-80f1-b8a60633f35f">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{patientName}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="50"/>
+	</columnHeader>
+	<detail>
+		<band height="87">
+			<subreport>
+				<reportElement x="0" y="10" width="552" height="53" uuid="4f4f6c28-9312-429b-882d-22557863bcf5"/>
+				<subreportParameter name="initData">
+					<subreportParameterExpression><![CDATA[$P{initData}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{prescriptions})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{initData}.getSubreportsDir() + "eReceptSummary_therapy.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>

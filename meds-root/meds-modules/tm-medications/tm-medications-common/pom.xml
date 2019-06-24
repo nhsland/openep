@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <parent>
+        <artifactId>tm-medications</artifactId>
+        <groupId>com.marand.thinkmed</groupId>
+        <version>3.7.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>tm-medications-common</artifactId>
+    <name>Think!Med Medications (Common)</name>
+
+    <properties>
+        <opt.dir>${basedir}/../../ispek-ehr/ispek-ehr-common/src/main/resources/com/marand/ispek/ehr/common/tdo</opt.dir>
+    </properties>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.thinkmed</groupId>
+            <artifactId>tm-core-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.thinkmed</groupId>
+            <artifactId>tm-demographics-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.thinkmed</groupId>
+            <artifactId>tm-medical-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.thinkmed</groupId>
+            <artifactId>tm-medications-connector</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.thinkmed</groupId>
+            <artifactId>tm-medications-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.ispek</groupId>
+            <artifactId>ispek-ehr-common</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.thinkehr</groupId>
+            <artifactId>thinkehr-framework-tdo-common</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.ispek</groupId>
+            <artifactId>ispek-bpm-common</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.thinkmed</groupId>
+            <artifactId>tm-process-common</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.thinkmed</groupId>
+            <artifactId>tm-clinical-html-ui</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.ispek</groupId>
+            <artifactId>ispek-common</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.thinkmed</groupId>
+            <artifactId>tm-medications-ehr-model</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+</project>

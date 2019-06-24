@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2019-02-18T12:23:03 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="TherapyDay_Empty_RateDose" pageWidth="802" pageHeight="555" orientation="Landscape" columnWidth="802" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="648be0f7-6bc3-44d1-9852-2d653ab04ab7">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="initData" class="com.marand.ispek.print.jasperreports.IspekJasperReportInitData"/>
+	<parameter name="order" class="com.marand.thinkmed.medications.api.internal.dto.TherapyDto">
+		<parameterDescription><![CDATA[order]]></parameterDescription>
+	</parameter>
+	<parameter name="hourDoseTime" class="java.util.List">
+		<parameterDescription><![CDATA[times]]></parameterDescription>
+	</parameter>
+	<parameter name="therapyReportStatusEnum" class="com.marand.thinkmed.medications.TherapyReportStatusEnum"/>
+	<parameter name="therapyApplicationStartDate" class="java.util.Date">
+		<parameterDescription><![CDATA[therapyApplicationStartDate]]></parameterDescription>
+	</parameter>
+	<parameter name="endTime" class="org.joda.time.DateTime"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="41" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="false">
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="55" height="41" uuid="ff84c8bd-6445-49ae-ae58-716256d6c52f">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.extractDoseTimeDisplay($P{hourDoseTime}.get($V{REPORT_COUNT}-1))]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement x="55" y="0" width="747" height="41" uuid="46f21903-779e-46f7-9d4f-db2dfd87bc49">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<subreportParameter name="therapyReportStatusEnum">
+					<subreportParameterExpression><![CDATA[$P{therapyReportStatusEnum}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="therapyApplicationStartDate">
+					<subreportParameterExpression><![CDATA[$P{therapyApplicationStartDate}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="endTime">
+					<subreportParameterExpression><![CDATA[$P{endTime}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="rowTime">
+					<subreportParameterExpression><![CDATA[$P{hourDoseTime}.get($V{REPORT_COUNT}-1)]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="order">
+					<subreportParameterExpression><![CDATA[$P{order}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{initData}.getSubreportsDir() + "TherapyDay_Grid.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <parent>
+        <artifactId>tm-medications</artifactId>
+        <groupId>com.marand.thinkmed</groupId>
+        <version>3.7.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>tm-medications-api</artifactId>
+    <name>Think!Meds API</name>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.thinkehr</groupId>
+            <artifactId>thinkehr-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.thinkmed</groupId>
+            <artifactId>tm-externals-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.thinkmed</groupId>
+            <artifactId>tm-clinical-html-ui</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.thinkmed</groupId>
+            <artifactId>tm-process-common</artifactId>
+        </dependency>
+
+    </dependencies>
+
+</project>

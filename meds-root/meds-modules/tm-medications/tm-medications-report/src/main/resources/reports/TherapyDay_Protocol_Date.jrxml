@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2018-09-03T15:57:48 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="TherapyDay_Date" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="d8bce07a-7054-4114-9f52-8ef90d1aef4c">
+	<parameter name="therapyApplicationStartDate" class="java.util.Date"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="250" y="0" width="125" height="15" uuid="7a4b071c-50b7-41e6-aa35-37b37a9089a9">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1" lineColor="#666666"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1" lineColor="#666666"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getTherapyApplicationColumnLabel($P{therapyApplicationStartDate}, 2)]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="125" y="0" width="125" height="15" uuid="c31371ae-16b7-4820-98ff-18ae92c43a84">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1" lineColor="#666666"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1" lineColor="#666666"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getTherapyApplicationColumnLabel($P{therapyApplicationStartDate}, 1)]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="125" height="15" uuid="9edff741-f87d-4142-8272-fd4d6f9d6a8b">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1" lineColor="#666666"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1" lineColor="#666666"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getTherapyApplicationColumnLabel($P{therapyApplicationStartDate}, 0)]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="15" width="23" height="15" uuid="891bbbda-0680-4fc6-b8e5-4b9759046bd4">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getGivenCheckedShorted($P{REPORT_LOCALE}, 0)]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="103" y="15" width="22" height="15" uuid="3251bd53-6ace-44dc-bec3-eaa83e78f4f6">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getGivenCheckedShorted($P{REPORT_LOCALE}, 1)]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="205" y="15" width="23" height="15" uuid="0618fae7-8974-4729-971e-ef4eecc33fbd">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getGivenCheckedShorted($P{REPORT_LOCALE}, 0)]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="228" y="15" width="22" height="15" uuid="4482d59c-c761-4b85-b177-9e22b8a21dbb">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getGivenCheckedShorted($P{REPORT_LOCALE}, 1)]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="330" y="15" width="23" height="15" uuid="e8e92fdf-6a15-4609-887b-cfcf20194afd">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getGivenCheckedShorted($P{REPORT_LOCALE}, 0)]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="353" y="15" width="22" height="15" uuid="f2e6cf59-c1ab-403a-9ddc-71cff4525d73">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getGivenCheckedShorted($P{REPORT_LOCALE}, 1)]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="15" width="23" height="15" uuid="d8ed934e-ee82-4adf-98a2-8f448139b985">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getGivenCheckedShorted($P{REPORT_LOCALE}, 0)]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="478" y="15" width="23" height="15" uuid="24b343d4-3bec-4a4b-98bc-1e28517d5b0e">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getGivenCheckedShorted($P{REPORT_LOCALE}, 1)]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="375" y="0" width="126" height="15" uuid="8e626ead-e10a-4343-81d3-49ddd9d277f8">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1" lineColor="#666666"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1" lineColor="#666666"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getTherapyApplicationColumnLabel($P{therapyApplicationStartDate}, 3)]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="15" width="40" height="15" uuid="48482265-8c40-4161-8eb1-6507c5421b52">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["T/D"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="125" y="15" width="40" height="15" uuid="2b7823d3-07eb-4109-9ccd-7b0c397dc196">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["T/D"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="250" y="15" width="40" height="15" uuid="e1ead475-1809-4596-9739-1ad7ee92a26c">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["T/D"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="375" y="15" width="40" height="15" uuid="e1594d70-f4a7-422a-b605-a70fdbf40e54">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["T/D"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="40" y="15" width="40" height="15" uuid="48bc868d-17a7-49ec-8a93-f90c1573fee9">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["T/D"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="165" y="15" width="40" height="15" uuid="1f0bea53-bdee-4674-90a1-82efdde77505">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["T/D"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="290" y="15" width="40" height="15" uuid="b1739831-55a3-4a3b-aa50-d8ca422bac20">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["T/D"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="415" y="15" width="40" height="15" uuid="edfeebe8-4388-402c-ad74-5050e1584a5a">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.1" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["T/D"]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

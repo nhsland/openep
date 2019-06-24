@@ -1,0 +1,9 @@
+
+
+<dataset>
+
+    <DISPENSE_SOURCE VERSION = "1" ID="1" NAME="Pharmacy" DELETED_ID="[null]" DEFAULT_SOURCE="1"/>
+    <DISPENSE_SOURCE VERSION = "1" ID="2" NAME="Patient" DELETED_ID="[null]" DEFAULT_SOURCE="0"/>
+    <DISPENSE_SOURCE VERSION = "1" ID="3" NAME="Ward" DELETED_ID="1" DEFAULT_SOURCE="0"/>
+
+</dataset>

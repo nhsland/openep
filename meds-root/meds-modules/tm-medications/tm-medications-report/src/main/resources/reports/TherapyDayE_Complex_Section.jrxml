@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2019-02-19T18:48:19 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="TherapyDayA_Complex" pageWidth="786" pageHeight="539" orientation="Landscape" columnWidth="786" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" resourceBundle="com.marand.ispek.common.Dictionary" whenResourceMissingType="Key" uuid="8d713aa8-1f3a-4536-a167-162361f93792">
+	<property name="ireport.zoom" value="1.7715610000000017"/>
+	<property name="ireport.x" value="150"/>
+	<property name="ireport.y" value="0"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<template><![CDATA[$P{initData}.getStylesDir() + "TherapyDay_Styles.jrtx"]]></template>
+	<subDataset name="EmptyDataset" uuid="19abbe06-48f2-4aa7-bbe3-3003f56dec5a"/>
+	<parameter name="initData" class="com.marand.ispek.print.jasperreports.IspekJasperReportInitData" isForPrompting="false"/>
+	<parameter name="labelFieldDelimiter" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[": "]]></defaultValueExpression>
+	</parameter>
+	<parameter name="order" class="com.marand.thinkmed.medications.api.internal.dto.ComplexTherapyDto" isForPrompting="false"/>
+	<parameter name="therapyConsecutiveDay" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="therapyStart" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="therapyEnd" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="therapyApplicationStartDate" class="java.util.Date" isForPrompting="false"/>
+	<parameter name="administrations" class="java.util.List" isForPrompting="false"/>
+	<parameter name="therapyReportStatusEnum" class="com.marand.thinkmed.medications.TherapyReportStatusEnum" isForPrompting="false">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+	</parameter>
+	<parameter name="currentRate" class="java.lang.String" isForPrompting="false">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+	</parameter>
+	<parameter name="hourDoseTime" class="java.util.List">
+		<parameterDescription><![CDATA[times]]></parameterDescription>
+	</parameter>
+	<parameter name="showTherapyConsecutiveDay" class="java.lang.Boolean"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="givenAdministrations" class="java.util.List">
+		<fieldDescription><![CDATA[givenAdministrations]]></fieldDescription>
+	</field>
+	<field name="therapyReportStatusEnum" class="com.marand.thinkmed.medications.TherapyReportStatusEnum">
+		<fieldDescription><![CDATA[therapyReportStatusEnum]]></fieldDescription>
+	</field>
+	<field name="consecutiveDayLabel" class="java.lang.String">
+		<fieldDescription><![CDATA[consecutiveDayLabel]]></fieldDescription>
+	</field>
+	<field name="showTherapyConsecutiveDay" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[showTherapyConsecutiveDay]]></fieldDescription>
+	</field>
+	<field name="therapyEnd" class="java.lang.String">
+		<fieldDescription><![CDATA[therapyEnd]]></fieldDescription>
+	</field>
+	<field name="currentRate" class="java.lang.String">
+		<fieldDescription><![CDATA[currentRate]]></fieldDescription>
+	</field>
+	<field name="therapyConsecutiveDay" class="java.lang.String">
+		<fieldDescription><![CDATA[therapyConsecutiveDay]]></fieldDescription>
+	</field>
+	<field name="currentOxygenDevice" class="java.lang.String">
+		<fieldDescription><![CDATA[currentOxygenDevice]]></fieldDescription>
+	</field>
+	<field name="therapyStart" class="java.lang.String">
+		<fieldDescription><![CDATA[therapyStart]]></fieldDescription>
+	</field>
+	<field name="notGivenAdministrations" class="java.util.List">
+		<fieldDescription><![CDATA[notGivenAdministrations]]></fieldDescription>
+	</field>
+	<field name="deferredAdministrations" class="java.util.List">
+		<fieldDescription><![CDATA[deferredAdministrations]]></fieldDescription>
+	</field>
+	<field name="pharmacistsReviewState" class="com.marand.thinkmed.medications.dto.pharmacist.review.TherapyPharmacistReviewStatusEnum">
+		<fieldDescription><![CDATA[pharmacistsReviewState]]></fieldDescription>
+	</field>
+	<field name="order" class="com.marand.thinkmed.medications.api.internal.dto.TherapyDto">
+		<fieldDescription><![CDATA[order]]></fieldDescription>
+	</field>
+	<detail>
+		<band height="90">
+			<subreport isUsingCache="false">
+				<reportElement key="" mode="Transparent" x="0" y="0" width="285" height="10" uuid="1538f229-0fb6-48aa-b726-3b250cf73403">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<parametersMapExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}]]></parametersMapExpression>
+				<subreportParameter name="baselineInfusionDisplay">
+					<subreportParameterExpression><![CDATA[$P{order}.getBaselineInfusionDisplay()]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="therapyConsecutiveDay">
+					<subreportParameterExpression><![CDATA[$F{therapyConsecutiveDay}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="labelFieldDelimiter">
+					<subreportParameterExpression><![CDATA[$P{labelFieldDelimiter}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource(com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.castToComplexTherapyDto($F{order}).getIngredientsList())]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{initData}.getSubreportsDir() + "TherapyDayA_Complex_Medication.jasper"]]></subreportExpression>
+			</subreport>
+			<textField>
+				<reportElement positionType="FixRelativeToBottom" mode="Opaque" x="0" y="29" width="285" height="55" uuid="0aed6e37-3bb3-468c-8ec9-8a941bf3aa37">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getBarcodeLabel($P{REPORT_LOCALE})]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement x="285" y="0" width="500" height="10" uuid="acd08bb8-66c2-4b2c-8952-be8619673556">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<subreportParameter name="initData">
+					<subreportParameterExpression><![CDATA[$P{initData}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="notGivenAdministrations">
+					<subreportParameterExpression><![CDATA[$F{notGivenAdministrations}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="givenAdministrations">
+					<subreportParameterExpression><![CDATA[$F{givenAdministrations}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="deferredAdministrations">
+					<subreportParameterExpression><![CDATA[$F{deferredAdministrations}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{initData}.getSubreportsDir() + "TherapyDayE_Medication_Statuses.jasper"]]></subreportExpression>
+			</subreport>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="dataBorder" positionType="Float" stretchType="RelativeToTallestObject" x="0" y="10" width="285" height="19" isRemoveLineWhenBlank="true" uuid="be10dfd9-6fd7-4646-9538-bf8f88854625">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="2" bottomPadding="1" rightPadding="2"/>
+				<textElement markup="html">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getPastTherapyCombinedDisplay($F{order}, $F{therapyStart}, $F{therapyEnd}, $F{therapyReportStatusEnum}, $P{REPORT_LOCALE}, $F{currentRate}, $F{therapyConsecutiveDay}, $F{showTherapyConsecutiveDay}, $F{consecutiveDayLabel}, $F{currentOxygenDevice}, null)]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="785" height="84" uuid="a8f6b27d-db82-4a6b-8df3-2fb1501c246a"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+			</frame>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2018-09-13T13:27:16 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="eReceptSummary_therapy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="822" leftMargin="20" rightMargin="0" topMargin="0" bottomMargin="20" whenResourceMissingType="Key" uuid="ce3b0b6f-71bb-4e00-b5ab-8551450c2f33">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="net.sf.jasperreports.print.create.bookmarks" value="false"/>
+	<template><![CDATA[$P{initData}.getStylesDir() + "TherapyDay_Styles.jrtx"]]></template>
+	<parameter name="prescriptions" class="java.util.List" isForPrompting="false"/>
+	<parameter name="initData" class="com.marand.ispek.print.jasperreports.IspekJasperReportInitData"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="medicationName" class="java.lang.String">
+		<fieldDescription><![CDATA[medicationName]]></fieldDescription>
+	</field>
+	<field name="prescriptionId" class="java.lang.String">
+		<fieldDescription><![CDATA[prescriptionId]]></fieldDescription>
+	</field>
+	<detail>
+		<band height="56">
+			<textField>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="80" height="50" uuid="5e7937c8-90a3-4fa1-ae62-7f1511ad36cd">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{prescriptionId}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement stretchType="RelativeToBandHeight" x="80" y="0" width="450" height="50" uuid="cbfb51ba-147f-4386-9dcf-2c1649efa0eb">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{medicationName}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

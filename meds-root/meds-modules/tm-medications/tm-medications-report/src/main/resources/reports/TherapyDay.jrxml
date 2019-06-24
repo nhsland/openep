@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2019-02-22T10:43:16 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="TherapyDay" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="786" leftMargin="28" rightMargin="28" topMargin="28" bottomMargin="28" resourceBundle="com.marand.ispek.common.Dictionary" whenResourceMissingType="Key" uuid="8d713aa8-1f3a-4536-a167-162361f93792">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<template><![CDATA[$P{initData}.getCommonStylesDir() + "Ispek_DocumentStyles.jrtx"]]></template>
+	<template><![CDATA[$P{initData}.getStylesDir() + "TherapyDay_Styles.jrtx"]]></template>
+	<subDataset name="EmptyDataset" uuid="24c2a154-5d03-4dc3-813f-17c8a3126920"/>
+	<parameter name="initData" class="com.marand.ispek.print.jasperreports.IspekJasperReportInitData" isForPrompting="false"/>
+	<parameter name="labelFieldDelimiter" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[": "]]></defaultValueExpression>
+	</parameter>
+	<parameter name="startingPageNumber" class="java.lang.Integer" isForPrompting="false">
+		<defaultValueExpression><![CDATA[0]]></defaultValueExpression>
+	</parameter>
+	<parameter name="startingPageCount" class="java.lang.Integer" isForPrompting="false">
+		<defaultValueExpression><![CDATA[0]]></defaultValueExpression>
+	</parameter>
+	<parameter name="signatureImage" class="java.awt.Image" isForPrompting="false">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="showSimpleGroups" class="java.lang.Boolean" isForPrompting="false">
+		<defaultValueExpression><![CDATA[true]]></defaultValueExpression>
+	</parameter>
+	<parameter name="showComplexGroups" class="java.lang.Boolean" isForPrompting="false">
+		<defaultValueExpression><![CDATA[true]]></defaultValueExpression>
+	</parameter>
+	<parameter name="therapyApplicationStartDate" class="java.util.Date" isForPrompting="false"/>
+	<parameter name="showLegend" class="java.lang.Boolean"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="pastSimpleElements" class="java.util.List">
+		<fieldDescription><![CDATA[pastSimpleElements]]></fieldDescription>
+	</field>
+	<field name="patientData" class="com.marand.thinkmed.medications.connector.data.object.PatientDataForTherapyReportDto">
+		<fieldDescription><![CDATA[patientData]]></fieldDescription>
+	</field>
+	<field name="patientSortOrder" class="java.lang.Integer">
+		<fieldDescription><![CDATA[patientSortOrder]]></fieldDescription>
+	</field>
+	<field name="forEmptyReport" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[forEmptyReport]]></fieldDescription>
+	</field>
+	<field name="oxygenElements" class="java.util.List">
+		<fieldDescription><![CDATA[oxygenElements]]></fieldDescription>
+	</field>
+	<field name="protocolTitrationSimpleElementsList" class="java.util.List">
+		<fieldDescription><![CDATA[protocolTitrationSimpleElementsList]]></fieldDescription>
+	</field>
+	<field name="class" class="java.lang.Class">
+		<fieldDescription><![CDATA[class]]></fieldDescription>
+	</field>
+	<field name="complexElements" class="java.util.List">
+		<fieldDescription><![CDATA[complexElements]]></fieldDescription>
+	</field>
+	<field name="simpleElements" class="java.util.List">
+		<fieldDescription><![CDATA[simpleElements]]></fieldDescription>
+	</field>
+	<field name="protocolTitrationComplexElementsList" class="java.util.List">
+		<fieldDescription><![CDATA[protocolTitrationComplexElementsList]]></fieldDescription>
+	</field>
+	<field name="prnSimpleElements" class="java.util.List">
+		<fieldDescription><![CDATA[prnSimpleElements]]></fieldDescription>
+	</field>
+	<field name="prnComplexElements" class="java.util.List">
+		<fieldDescription><![CDATA[prnComplexElements]]></fieldDescription>
+	</field>
+	<field name="pastComplexElements" class="java.util.List">
+		<fieldDescription><![CDATA[pastComplexElements]]></fieldDescription>
+	</field>
+	<variable name="CURRENT_PAGE_NUMBER" class="java.lang.Integer" resetType="Page">
+		<variableExpression><![CDATA[$V{PAGE_NUMBER}]]></variableExpression>
+		<initialValueExpression><![CDATA[1]]></initialValueExpression>
+	</variable>
+	<variable name="hasComplexElements" class="java.lang.Boolean">
+		<initialValueExpression><![CDATA[$F{complexElements}.size() > 0]]></initialValueExpression>
+	</variable>
+	<variable name="hasSimpleElements" class="java.lang.Boolean">
+		<initialValueExpression><![CDATA[$F{simpleElements}.size() > 0]]></initialValueExpression>
+	</variable>
+	<group name="Patient">
+		<groupHeader>
+			<band height="20">
+				<printWhenExpression><![CDATA[!$F{complexElements}.isEmpty()]]></printWhenExpression>
+				<subreport>
+					<reportElement x="0" y="0" width="786" height="20" uuid="a7e5c469-4104-4740-9c53-3db448efab33"/>
+					<parametersMapExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}]]></parametersMapExpression>
+					<subreportParameter name="complexElements">
+						<subreportParameterExpression><![CDATA[$F{complexElements}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="therapyApplicationStartDate">
+						<subreportParameterExpression><![CDATA[$P{therapyApplicationStartDate}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="showGroups">
+						<subreportParameterExpression><![CDATA[$P{showComplexGroups}]]></subreportParameterExpression>
+					</subreportParameter>
+					<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></dataSourceExpression>
+					<subreportExpression><![CDATA[$P{initData}.getSubreportsDir() + "TherapyDayA.jasper"]]></subreportExpression>
+				</subreport>
+			</band>
+			<band height="1">
+				<printWhenExpression><![CDATA[$V{hasComplexElements} && $V{hasSimpleElements}]]></printWhenExpression>
+				<break>
+					<reportElement x="0" y="0" width="100" height="1" uuid="90a74d99-5c76-496f-9d9f-ac358dcc3f5b"/>
+				</break>
+			</band>
+			<band height="27">
+				<printWhenExpression><![CDATA[!$F{simpleElements}.isEmpty()]]></printWhenExpression>
+				<subreport>
+					<reportElement x="0" y="0" width="786" height="20" uuid="ea07107a-ba6d-4445-b78f-f2c4a7bc8b33"/>
+					<parametersMapExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}]]></parametersMapExpression>
+					<subreportParameter name="therapyApplicationStartDate">
+						<subreportParameterExpression><![CDATA[$P{therapyApplicationStartDate}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="simpleElements">
+						<subreportParameterExpression><![CDATA[$F{simpleElements}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="showGroups">
+						<subreportParameterExpression><![CDATA[$P{showSimpleGroups}]]></subreportParameterExpression>
+					</subreportParameter>
+					<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></dataSourceExpression>
+					<subreportExpression><![CDATA[$P{initData}.getSubreportsDir() + "TherapyDayB.jasper"]]></subreportExpression>
+				</subreport>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="patient">
+		<groupHeader>
+			<band height="1">
+				<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				<printWhenExpression><![CDATA[!$F{oxygenElements}.isEmpty()]]></printWhenExpression>
+				<break>
+					<reportElement x="0" y="0" width="100" height="1" uuid="ac49f83c-c69b-4af1-8874-ea7d09556c8f"/>
+				</break>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="break">
+		<groupHeader>
+			<band height="24">
+				<printWhenExpression><![CDATA[!$F{oxygenElements}.isEmpty()]]></printWhenExpression>
+				<subreport>
+					<reportElement x="0" y="0" width="786" height="20" uuid="07893134-060b-48c7-81d8-30ae03918ca3"/>
+					<parametersMapExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}]]></parametersMapExpression>
+					<subreportParameter name="therapyApplicationStartDate">
+						<subreportParameterExpression><![CDATA[$P{therapyApplicationStartDate}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="oxygenElements">
+						<subreportParameterExpression><![CDATA[$F{oxygenElements}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="showGroups">
+						<subreportParameterExpression><![CDATA[$P{showSimpleGroups}]]></subreportParameterExpression>
+					</subreportParameter>
+					<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></dataSourceExpression>
+					<subreportExpression><![CDATA[$P{initData}.getSubreportsDir() + "TherapyDayC.jasper"]]></subreportExpression>
+				</subreport>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="Group1" isStartNewPage="true"/>
+	<group name="Group11" isStartNewPage="true">
+		<groupHeader>
+			<band height="1">
+				<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				<printWhenExpression><![CDATA[!$F{protocolTitrationSimpleElementsList}.isEmpty() && (!$F{complexElements}.isEmpty() || !$F{simpleElements}.isEmpty() || !$F{oxygenElements}.isEmpty())]]></printWhenExpression>
+				<break>
+					<reportElement x="0" y="0" width="100" height="1" uuid="28e64459-ba0b-4287-857d-80c892a093d7"/>
+				</break>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="Group2">
+		<groupHeader>
+			<band height="20">
+				<printWhenExpression><![CDATA[!$F{protocolTitrationSimpleElementsList}.isEmpty()]]></printWhenExpression>
+				<subreport>
+					<reportElement x="0" y="0" width="786" height="20" uuid="010a311d-dd01-482e-95fe-0fe4c82fd980"/>
+					<parametersMapExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}]]></parametersMapExpression>
+					<subreportParameter name="therapyApplicationStartDate">
+						<subreportParameterExpression><![CDATA[$P{therapyApplicationStartDate}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="protocolTitrationSimpleElementsList">
+						<subreportParameterExpression><![CDATA[$F{protocolTitrationSimpleElementsList}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="showGroups">
+						<subreportParameterExpression><![CDATA[$P{showSimpleGroups}]]></subreportParameterExpression>
+					</subreportParameter>
+					<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></dataSourceExpression>
+					<subreportExpression><![CDATA[$P{initData}.getSubreportsDir() + "TherapyDayD_Simple.jasper"]]></subreportExpression>
+				</subreport>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="Group3">
+		<groupHeader>
+			<band height="1">
+				<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				<printWhenExpression><![CDATA[!$F{protocolTitrationComplexElementsList}.isEmpty()]]></printWhenExpression>
+				<break>
+					<reportElement x="0" y="0" width="100" height="1" uuid="8b359c68-d49b-4782-96ee-eedf52d0c782"/>
+				</break>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="Group4">
+		<groupHeader>
+			<band height="23">
+				<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				<printWhenExpression><![CDATA[!$F{protocolTitrationComplexElementsList}.isEmpty()]]></printWhenExpression>
+				<subreport>
+					<reportElement x="0" y="0" width="786" height="20" uuid="b0348e5e-6202-4162-8653-4db1ab98fbd6"/>
+					<parametersMapExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}]]></parametersMapExpression>
+					<subreportParameter name="therapyApplicationStartDate">
+						<subreportParameterExpression><![CDATA[$P{therapyApplicationStartDate}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="protocolTitrationComplexElementsList">
+						<subreportParameterExpression><![CDATA[$F{protocolTitrationComplexElementsList}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="showGroups">
+						<subreportParameterExpression><![CDATA[$P{showSimpleGroups}]]></subreportParameterExpression>
+					</subreportParameter>
+					<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></dataSourceExpression>
+					<subreportExpression><![CDATA[$P{initData}.getSubreportsDir() + "TherapyDayD_Complex.jasper"]]></subreportExpression>
+				</subreport>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="Group5">
+		<groupHeader>
+			<band height="1">
+				<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				<printWhenExpression><![CDATA[!$F{prnComplexElements}.isEmpty()]]></printWhenExpression>
+				<break>
+					<reportElement x="0" y="0" width="100" height="1" uuid="7f65a062-b682-4f27-b273-7947db8446ec"/>
+				</break>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="Group6">
+		<groupHeader>
+			<band height="23">
+				<printWhenExpression><![CDATA[!$F{prnComplexElements}.isEmpty()]]></printWhenExpression>
+				<subreport>
+					<reportElement x="0" y="0" width="786" height="20" uuid="8b7e32bf-37d2-4046-84a7-6ec0f5ad7e2e"/>
+					<parametersMapExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}]]></parametersMapExpression>
+					<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{prnComplexElements})]]></dataSourceExpression>
+					<subreportExpression><![CDATA[$P{initData}.getSubreportsDir() + "TherapyDayFComplex.jasper"]]></subreportExpression>
+				</subreport>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="Group12">
+		<groupHeader>
+			<band height="1">
+				<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				<printWhenExpression><![CDATA[!$F{prnSimpleElements}.isEmpty()]]></printWhenExpression>
+				<break>
+					<reportElement x="0" y="0" width="100" height="1" uuid="1dfd8a8d-3637-45a4-8b84-9e15eef59fd5"/>
+				</break>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="Group7">
+		<groupHeader>
+			<band height="27">
+				<printWhenExpression><![CDATA[!$F{prnSimpleElements}.isEmpty()]]></printWhenExpression>
+				<subreport>
+					<reportElement x="0" y="7" width="786" height="20" uuid="0a22829c-31a3-41ae-8226-6e33c0d1d17f"/>
+					<parametersMapExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}]]></parametersMapExpression>
+					<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{prnSimpleElements})]]></dataSourceExpression>
+					<subreportExpression><![CDATA[$P{initData}.getSubreportsDir() + "TherapyDayFSimple.jasper"]]></subreportExpression>
+				</subreport>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="Group10">
+		<groupHeader>
+			<band height="1">
+				<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				<printWhenExpression><![CDATA[!$F{pastSimpleElements}.isEmpty() && (!$F{oxygenElements}.isEmpty() || !$F{protocolTitrationSimpleElementsList}.isEmpty()
+|| !$F{complexElements}.isEmpty() || !$F{simpleElements}.isEmpty() || !$F{protocolTitrationComplexElementsList}.isEmpty()
+|| !$F{prnSimpleElements}.isEmpty() || !$F{prnComplexElements}.isEmpty())]]></printWhenExpression>
+				<break>
+					<reportElement x="0" y="0" width="100" height="1" uuid="6aaa7119-fe06-4552-b698-8361089e4fb5">
+						<printWhenExpression><![CDATA[!$F{pastSimpleElements}.isEmpty()]]></printWhenExpression>
+					</reportElement>
+				</break>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="Group8">
+		<groupHeader>
+			<band height="25">
+				<printWhenExpression><![CDATA[!$F{pastSimpleElements}.isEmpty()]]></printWhenExpression>
+				<subreport>
+					<reportElement x="0" y="0" width="786" height="20" uuid="ef961cc8-18e1-432f-8b96-58e705f599b9"/>
+					<parametersMapExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}]]></parametersMapExpression>
+					<subreportParameter name="therapyApplicationStartDate">
+						<subreportParameterExpression><![CDATA[$P{therapyApplicationStartDate}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="pastSimpleElements">
+						<subreportParameterExpression><![CDATA[$F{pastSimpleElements}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="showGroups">
+						<subreportParameterExpression><![CDATA[$P{showSimpleGroups}]]></subreportParameterExpression>
+					</subreportParameter>
+					<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></dataSourceExpression>
+					<subreportExpression><![CDATA[!$F{pastSimpleElements}.isEmpty() ? $P{initData}.getSubreportsDir() + "TherapyDayE_Simple.jasper" : null]]></subreportExpression>
+				</subreport>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="Group13">
+		<groupHeader>
+			<band height="1">
+				<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				<printWhenExpression><![CDATA[!$F{pastComplexElements}.isEmpty()&& (!$F{pastSimpleElements}.isEmpty() || !$F{oxygenElements}.isEmpty() || !$F{protocolTitrationSimpleElementsList}.isEmpty()
+|| !$F{complexElements}.isEmpty() || !$F{simpleElements}.isEmpty() || !$F{protocolTitrationComplexElementsList}.isEmpty()
+|| !$F{prnSimpleElements}.isEmpty() || !$F{prnComplexElements}.isEmpty())]]></printWhenExpression>
+				<break>
+					<reportElement x="0" y="0" width="100" height="1" uuid="930fbe07-cc55-492c-bfcd-832b84360a57">
+						<printWhenExpression><![CDATA[!$F{pastComplexElements}.isEmpty()]]></printWhenExpression>
+					</reportElement>
+				</break>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="Group9">
+		<groupHeader>
+			<band height="23">
+				<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				<printWhenExpression><![CDATA[!$F{pastComplexElements}.isEmpty()]]></printWhenExpression>
+				<subreport>
+					<reportElement x="0" y="0" width="786" height="20" uuid="338d430f-f4ba-4f6f-897d-ca1bca095245"/>
+					<parametersMapExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}]]></parametersMapExpression>
+					<subreportParameter name="therapyApplicationStartDate">
+						<subreportParameterExpression><![CDATA[$P{therapyApplicationStartDate}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="pastComplexElements">
+						<subreportParameterExpression><![CDATA[$F{pastComplexElements}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="showGroups">
+						<subreportParameterExpression><![CDATA[$P{showSimpleGroups}]]></subreportParameterExpression>
+					</subreportParameter>
+					<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></dataSourceExpression>
+					<subreportExpression><![CDATA[!$F{pastComplexElements}.isEmpty() ? $P{initData}.getSubreportsDir() + "TherapyDayE_Complex.jasper" : null]]></subreportExpression>
+				</subreport>
+			</band>
+		</groupHeader>
+	</group>
+	<background>
+		<band height="539"/>
+	</background>
+	<pageHeader>
+		<band height="20">
+			<subreport>
+				<reportElement x="0" y="0" width="786" height="20" uuid="53e9919d-65ae-42b4-be5e-af218315a7bc"/>
+				<parametersMapExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}]]></parametersMapExpression>
+				<subreportParameter name="patientData">
+					<subreportParameterExpression><![CDATA[$F{patientData}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{initData}.getSubreportsDir() + "TherapyDay_Patient.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</pageHeader>
+	<pageFooter>
+		<band height="101">
+			<subreport>
+				<reportElement x="0" y="0" width="786" height="30" uuid="275b991d-dc18-4b4b-8264-aa48ab69126e">
+					<printWhenExpression><![CDATA[$P{showLegend} == true]]></printWhenExpression>
+				</reportElement>
+				<parametersMapExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}]]></parametersMapExpression>
+				<subreportParameter name="simpleElements">
+					<subreportParameterExpression><![CDATA[$F{simpleElements}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="showGroups">
+					<subreportParameterExpression><![CDATA[$P{showSimpleGroups}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{initData}.getSubreportsDir() + "TherapyDay_Legend.jasper"]]></subreportExpression>
+			</subreport>
+			<textField>
+				<reportElement style="pageFooter" x="0" y="60" width="50" height="35" uuid="38207926-f2a4-438c-a76a-b2730128d09a"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[msg($R{page.x.from}, $V{PAGE_NUMBER})]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="pageFooter" x="50" y="60" width="40" height="35" uuid="b83e0986-77d6-4271-b0e5-529a64393620"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement key="" style="pageFooter" x="90" y="60" width="140" height="35" uuid="0bbd5d7e-de72-46ba-901e-1829578fde80"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{initData}.getUser()]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="dataNormal" x="230" y="60" width="470" height="35" uuid="1d2f43d6-0158-456f-97db-bf42a72b3468"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getTimeOfCreationLabelAndDate($P{REPORT_LOCALE})]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="59" width="786" height="25" uuid="69cc3195-755b-46f0-bc86-a6737f522eb6"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getActiveReportPrecaution($P{REPORT_LOCALE})+"."]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

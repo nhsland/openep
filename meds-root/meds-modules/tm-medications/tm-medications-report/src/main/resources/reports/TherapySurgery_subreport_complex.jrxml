@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2019-05-29T14:42:45 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="TherapySurgery_subreport_complex" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="c6af0d1b-0e56-4d88-ba2b-403e5b675ae0">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="labelFieldDelimiter" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[": "]]></defaultValueExpression>
+	</parameter>
+	<parameter name="initData" class="com.marand.ispek.print.jasperreports.IspekJasperReportInitData" isForPrompting="false"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="date" class="java.lang.String">
+		<fieldDescription><![CDATA[date]]></fieldDescription>
+	</field>
+	<field name="therapyStart" class="java.lang.String">
+		<fieldDescription><![CDATA[therapyStart]]></fieldDescription>
+	</field>
+	<field name="therapyReportStatusEnum" class="com.marand.thinkmed.medications.TherapyReportStatusEnum">
+		<fieldDescription><![CDATA[therapyReportStatusEnum]]></fieldDescription>
+	</field>
+	<field name="therapy" class="com.marand.thinkmed.medications.api.internal.dto.ComplexTherapyDto">
+		<fieldDescription><![CDATA[therapy]]></fieldDescription>
+	</field>
+	<field name="showTherapyConsecutiveDay" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[showTherapyConsecutiveDay]]></fieldDescription>
+	</field>
+	<field name="therapyEnd" class="java.lang.String">
+		<fieldDescription><![CDATA[therapyEnd]]></fieldDescription>
+	</field>
+	<field name="currentRate" class="java.lang.String">
+		<fieldDescription><![CDATA[currentRate]]></fieldDescription>
+	</field>
+	<field name="timeDose" class="java.lang.String">
+		<fieldDescription><![CDATA[timeDose]]></fieldDescription>
+	</field>
+	<field name="therapyConsecutiveDay" class="java.lang.String">
+		<fieldDescription><![CDATA[therapyConsecutiveDay]]></fieldDescription>
+	</field>
+	<field name="consecutiveDayLabel" class="java.lang.String">
+		<fieldDescription><![CDATA[consecutiveDayLabel]]></fieldDescription>
+	</field>
+	<detail>
+		<band height="54" splitType="Prevent">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<frame>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="2" width="555" height="50" uuid="a3a8affe-bf86-465a-abce-975254869ffc">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToTallestObject" x="248" y="-1" width="87" height="50" isPrintWhenDetailOverflows="true" uuid="843e5764-0fdd-4014-a93e-302a1d6369d8">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.0"/>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Left" markup="html">
+						<font size="7" isStrikeThrough="false"/>
+						<paragraph lineSpacing="Single" leftIndent="0"/>
+					</textElement>
+					<textFieldExpression><![CDATA[!$F{timeDose}.isEmpty() ? $F{date}+" - "+$F{timeDose} : ""]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="false">
+					<reportElement positionType="Float" isPrintRepeatedValues="false" mode="Opaque" x="-2" y="9" width="250" height="40" isPrintWhenDetailOverflows="true" uuid="a9a2711f-f655-4ed9-97d6-633f6411a85c">
+						<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+						<topPen lineWidth="0.1" lineColor="#666666"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="1.0" lineColor="#000000"/>
+					</box>
+					<textElement markup="html">
+						<font isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getComplexCombinedDisplay($F{therapy}, $F{therapyStart}, $F{therapyEnd}, $F{therapyReportStatusEnum}, $P{REPORT_LOCALE}, $F{currentRate}, $F{therapyConsecutiveDay}, $F{showTherapyConsecutiveDay}, $F{consecutiveDayLabel}, null)]]></textFieldExpression>
+				</textField>
+				<subreport isUsingCache="false">
+					<reportElement key="" positionType="Float" isPrintRepeatedValues="false" mode="Transparent" x="-2" y="-1" width="250" height="10" isPrintWhenDetailOverflows="true" uuid="a3cfb0e6-0c59-44b7-9095-eda62ec46405">
+						<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					</reportElement>
+					<parametersMapExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}]]></parametersMapExpression>
+					<subreportParameter name="baselineInfusionDisplay">
+						<subreportParameterExpression><![CDATA[$F{therapy}.getBaselineInfusionDisplay()]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="therapyConsecutiveDay">
+						<subreportParameterExpression><![CDATA[$F{therapyConsecutiveDay}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="labelFieldDelimiter">
+						<subreportParameterExpression><![CDATA[$P{labelFieldDelimiter}]]></subreportParameterExpression>
+					</subreportParameter>
+					<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{therapy}.getIngredientsList())]]></dataSourceExpression>
+					<subreportExpression><![CDATA[$P{initData}.getSubreportsDir() + "TherapySurgery_Complex_Medication.jasper"]]></subreportExpression>
+				</subreport>
+				<frame>
+					<reportElement x="335" y="-1" width="218" height="50" uuid="9e8a6745-d2b3-43f3-80b8-b80b7e7ee110">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					</reportElement>
+					<box>
+						<topPen lineWidth="0.1"/>
+						<leftPen lineWidth="0.1"/>
+						<bottomPen lineWidth="0.1"/>
+						<rightPen lineWidth="0.1"/>
+					</box>
+					<textField isBlankWhenNull="true">
+						<reportElement x="-2" y="-1" width="18" height="25" uuid="7fa4ab5c-eeac-4437-afc8-8d92a377464a">
+							<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						</reportElement>
+						<box>
+							<topPen lineWidth="0.1"/>
+							<leftPen lineWidth="0.1"/>
+							<bottomPen lineWidth="0.1"/>
+							<rightPen lineWidth="0.1"/>
+						</box>
+						<textFieldExpression><![CDATA[""]]></textFieldExpression>
+					</textField>
+					<textField isBlankWhenNull="true">
+						<reportElement x="-2" y="24" width="18" height="25" uuid="977772f1-6217-4836-aaa7-81c1e77b87f6">
+							<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						</reportElement>
+						<box>
+							<topPen lineWidth="0.1"/>
+							<leftPen lineWidth="0.1"/>
+							<bottomPen lineWidth="0.1"/>
+							<rightPen lineWidth="0.1"/>
+						</box>
+						<textFieldExpression><![CDATA[""]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="16" y="-1" width="18" height="25" uuid="26a2d6f1-e648-4586-b2d7-09ef946893a2">
+							<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						</reportElement>
+						<box>
+							<topPen lineWidth="0.1"/>
+							<leftPen lineWidth="0.1"/>
+							<bottomPen lineWidth="0.1"/>
+							<rightPen lineWidth="0.1"/>
+						</box>
+						<textFieldExpression><![CDATA[""]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="34" y="-1" width="18" height="25" uuid="3aaf313c-7ece-464a-85c9-9926152818a4">
+							<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						</reportElement>
+						<box>
+							<topPen lineWidth="0.1"/>
+							<leftPen lineWidth="0.1"/>
+							<bottomPen lineWidth="0.1"/>
+							<rightPen lineWidth="0.1"/>
+						</box>
+						<textFieldExpression><![CDATA[""]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="52" y="-1" width="18" height="25" uuid="0d8fd1d0-6c39-4d7b-b5c0-61a93c8dbafd">
+							<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						</reportElement>
+						<box>
+							<topPen lineWidth="0.1"/>
+							<leftPen lineWidth="0.1"/>
+							<bottomPen lineWidth="0.1"/>
+							<rightPen lineWidth="0.1"/>
+						</box>
+						<textFieldExpression><![CDATA[""]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="70" y="-1" width="18" height="25" uuid="fb3cbe9e-0e05-4713-b072-847db9e7e31e">
+							<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						</reportElement>
+						<box>
+							<topPen lineWidth="0.1"/>
+							<leftPen lineWidth="0.1"/>
+							<bottomPen lineWidth="0.1"/>
+							<rightPen lineWidth="0.1"/>
+						</box>
+						<textFieldExpression><![CDATA[""]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="88" y="-1" width="18" height="25" uuid="ed4c135b-e594-4f0e-977d-970ae85ce7e2">
+							<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						</reportElement>
+						<box>
+							<topPen lineWidth="0.1"/>
+							<leftPen lineWidth="0.1"/>
+							<bottomPen lineWidth="0.1"/>
+							<rightPen lineWidth="1.0"/>
+						</box>
+						<textFieldExpression><![CDATA[""]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="106" y="-1" width="18" height="25" uuid="68939576-d80a-4f8d-b208-adc876b6f516">
+							<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						</reportElement>
+						<box>
+							<topPen lineWidth="0.1"/>
+							<leftPen lineWidth="1.0"/>
+							<bottomPen lineWidth="0.1"/>
+							<rightPen lineWidth="0.1"/>
+						</box>
+						<textFieldExpression><![CDATA[""]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="124" y="-1" width="18" height="25" uuid="7f47e83b-0763-4512-9278-97513ed1de78">
+							<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						</reportElement>
+						<box>
+							<topPen lineWidth="0.1"/>
+							<leftPen lineWidth="0.1"/>
+							<bottomPen lineWidth="0.1"/>
+							<rightPen lineWidth="0.1"/>
+						</box>
+						<textFieldExpression><![CDATA[""]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="142" y="-1" width="18" height="25" uuid="4afe673d-6226-48c8-a0e3-4285d47e531e">
+							<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						</reportElement>
+						<box>
+							<topPen lineWidth="0.1"/>
+							<leftPen lineWidth="0.1"/>
+							<bottomPen lineWidth="0.1"/>
+							<rightPen lineWidth="0.1"/>
+						</box>
+						<textFieldExpression><![CDATA[""]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="16" y="24" width="18" height="25" uuid="fa3b36ba-43ae-4cd3-8594-fcbe9f0db5b8">
+							<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						</reportElement>
+						<box>
+							<topPen lineWidth="0.1"/>
+							<leftPen lineWidth="0.1"/>
+							<bottomPen lineWidth="0.1"/>
+							<rightPen lineWidth="0.1"/>
+						</box>
+						<textFieldExpression><![CDATA[""]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="34" y="24" width="18" height="25" uuid="76294a05-6127-4649-8102-9a4b3f0f71d1">
+							<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						</reportElement>
+						<box>
+							<topPen lineWidth="0.1"/>
+							<leftPen lineWidth="0.1"/>
+							<bottomPen lineWidth="0.1"/>
+							<rightPen lineWidth="0.1"/>
+						</box>
+						<textFieldExpression><![CDATA[""]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="52" y="24" width="18" height="25" uuid="48928e7a-da2d-48f7-86ce-fda4cf0e3410">
+							<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						</reportElement>
+						<box>
+							<topPen lineWidth="0.1"/>
+							<leftPen lineWidth="0.1"/>
+							<bottomPen lineWidth="0.1"/>
+							<rightPen lineWidth="0.1"/>
+						</box>
+						<textFieldExpression><![CDATA[""]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="70" y="24" width="18" height="25" uuid="558a509b-3ad8-4c60-b802-15c4d670637c">
+							<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						</reportElement>
+						<box>
+							<topPen lineWidth="0.1"/>
+							<leftPen lineWidth="0.1"/>
+							<bottomPen lineWidth="0.1"/>
+							<rightPen lineWidth="0.1"/>
+						</box>
+						<textFieldExpression><![CDATA[""]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="88" y="24" width="18" height="25" uuid="242498d5-9105-4989-99f8-e482a18f8e20">
+							<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						</reportElement>
+						<box>
+							<topPen lineWidth="0.1"/>
+							<leftPen lineWidth="0.1"/>
+							<bottomPen lineWidth="0.1"/>
+							<rightPen lineWidth="1.0"/>
+						</box>
+						<textFieldExpression><![CDATA[""]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="106" y="24" width="18" height="25" uuid="3bcabab2-96e6-4d64-b48b-45f38346e8ae">
+							<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						</reportElement>
+						<box>
+							<topPen lineWidth="0.1"/>
+							<leftPen lineWidth="1.0"/>
+							<bottomPen lineWidth="0.1"/>
+							<rightPen lineWidth="0.1"/>
+						</box>
+						<textFieldExpression><![CDATA[""]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="124" y="24" width="18" height="25" uuid="df22de55-b307-43ad-9f20-673835ae00c0">
+							<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						</reportElement>
+						<box>
+							<topPen lineWidth="0.1"/>
+							<leftPen lineWidth="0.1"/>
+							<bottomPen lineWidth="0.1"/>
+							<rightPen lineWidth="0.1"/>
+						</box>
+						<textFieldExpression><![CDATA[""]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="142" y="24" width="18" height="25" uuid="aa3af0f6-6060-4970-8864-cb04a0b33121">
+							<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						</reportElement>
+						<box>
+							<topPen lineWidth="0.1"/>
+							<leftPen lineWidth="0.1"/>
+							<bottomPen lineWidth="0.1"/>
+							<rightPen lineWidth="0.1"/>
+						</box>
+						<textFieldExpression><![CDATA[""]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="160" y="-1" width="18" height="25" uuid="09608af5-7a97-4fbe-8151-da7745315599">
+							<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						</reportElement>
+						<box>
+							<topPen lineWidth="0.1"/>
+							<leftPen lineWidth="0.1"/>
+							<bottomPen lineWidth="0.1"/>
+							<rightPen lineWidth="0.1"/>
+						</box>
+						<textFieldExpression><![CDATA[""]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="160" y="24" width="18" height="25" uuid="80afcee8-bc38-4cc3-a138-5c8e36f63069">
+							<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						</reportElement>
+						<box>
+							<topPen lineWidth="0.1"/>
+							<leftPen lineWidth="0.1"/>
+							<bottomPen lineWidth="0.1"/>
+							<rightPen lineWidth="0.1"/>
+						</box>
+						<textFieldExpression><![CDATA[""]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="178" y="-1" width="19" height="25" uuid="9b4e5c3c-0276-486c-8d97-3530f0bdbbda">
+							<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+						</reportElement>
+						<box>
+							<topPen lineWidth="0.1"/>
+							<leftPen lineWidth="0.1"/>
+							<bottomPen lineWidth="0.1"/>
+							<rightPen lineWidth="0.1"/>
+						</box>
+						<textFieldExpression><![CDATA[""]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="178" y="24" width="19" height="25" uuid="a5005ca3-2609-4902-9495-f18e22a5f56c">
+							<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						</reportElement>
+						<box>
+							<topPen lineWidth="0.1"/>
+							<leftPen lineWidth="0.1"/>
+							<bottomPen lineWidth="0.1"/>
+							<rightPen lineWidth="0.1"/>
+						</box>
+						<textFieldExpression><![CDATA[""]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="197" y="-1" width="19" height="25" uuid="de28a386-0153-4d67-80e2-2355b007de41">
+							<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						</reportElement>
+						<box>
+							<topPen lineWidth="0.1"/>
+							<leftPen lineWidth="0.1"/>
+							<bottomPen lineWidth="0.1"/>
+							<rightPen lineWidth="0.1"/>
+						</box>
+						<textFieldExpression><![CDATA[""]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="197" y="24" width="19" height="25" uuid="8685228e-269a-4221-bcd1-b62474eedd81">
+							<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						</reportElement>
+						<box>
+							<topPen lineWidth="0.1"/>
+							<leftPen lineWidth="0.1"/>
+							<bottomPen lineWidth="0.1"/>
+							<rightPen lineWidth="0.1"/>
+						</box>
+						<textFieldExpression><![CDATA[""]]></textFieldExpression>
+					</textField>
+				</frame>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band>
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band>
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+		</band>
+	</pageFooter>
+</jasperReport>

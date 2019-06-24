@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2019-02-19T18:48:54 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="TherapyDayE_Medication" pageWidth="802" pageHeight="555" orientation="Landscape" columnWidth="802" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="58c0fd36-804f-4e48-84b9-7301be4f4b29">
+	<template><![CDATA[$P{initData}.getStylesDir() + "TherapyDay_Styles.jrtx"]]></template>
+	<parameter name="initData" class="com.marand.ispek.print.jasperreports.IspekJasperReportInitData"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="givenAdministrations" class="java.util.List">
+		<fieldDescription><![CDATA[givenAdministrations]]></fieldDescription>
+	</field>
+	<field name="therapyReportStatusEnum" class="com.marand.thinkmed.medications.TherapyReportStatusEnum">
+		<fieldDescription><![CDATA[therapyReportStatusEnum]]></fieldDescription>
+	</field>
+	<field name="consecutiveDayLabel" class="java.lang.String">
+		<fieldDescription><![CDATA[consecutiveDayLabel]]></fieldDescription>
+	</field>
+	<field name="showTherapyConsecutiveDay" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[showTherapyConsecutiveDay]]></fieldDescription>
+	</field>
+	<field name="therapyEnd" class="java.lang.String">
+		<fieldDescription><![CDATA[therapyEnd]]></fieldDescription>
+	</field>
+	<field name="currentRate" class="java.lang.String">
+		<fieldDescription><![CDATA[currentRate]]></fieldDescription>
+	</field>
+	<field name="therapyConsecutiveDay" class="java.lang.String">
+		<fieldDescription><![CDATA[therapyConsecutiveDay]]></fieldDescription>
+	</field>
+	<field name="currentOxygenDevice" class="java.lang.String">
+		<fieldDescription><![CDATA[currentOxygenDevice]]></fieldDescription>
+	</field>
+	<field name="therapyStart" class="java.lang.String">
+		<fieldDescription><![CDATA[therapyStart]]></fieldDescription>
+	</field>
+	<field name="notGivenAdministrations" class="java.util.List">
+		<fieldDescription><![CDATA[notGivenAdministrations]]></fieldDescription>
+	</field>
+	<field name="deferredAdministrations" class="java.util.List">
+		<fieldDescription><![CDATA[deferredAdministrations]]></fieldDescription>
+	</field>
+	<field name="pharmacistsReviewState" class="com.marand.thinkmed.medications.dto.pharmacist.review.TherapyPharmacistReviewStatusEnum">
+		<fieldDescription><![CDATA[pharmacistsReviewState]]></fieldDescription>
+	</field>
+	<field name="order" class="com.marand.thinkmed.medications.api.internal.dto.TherapyDto">
+		<fieldDescription><![CDATA[order]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="85" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<textField>
+				<reportElement positionType="Float" mode="Opaque" x="0" y="30" width="285" height="45" uuid="c8b7c450-e28f-46e8-8c0e-8ff2383151e0">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getBarcodeLabel($P{REPORT_LOCALE})]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="dataBorder" stretchType="RelativeToBandHeight" x="0" y="0" width="285" height="29" isRemoveLineWhenBlank="true" uuid="d875bf92-4996-4f11-bb5b-1d32b0d18a0a">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="2" bottomPadding="1" rightPadding="2"/>
+				<textElement markup="html">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getPastTherapyCombinedDisplay($F{order}, $F{therapyStart}, $F{therapyEnd}, $F{therapyReportStatusEnum}, $P{REPORT_LOCALE}, $F{currentRate}, $F{therapyConsecutiveDay}, $F{showTherapyConsecutiveDay}, $F{consecutiveDayLabel}, $F{currentOxygenDevice}, null)]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement stretchType="RelativeToBandHeight" x="285" y="0" width="500" height="10" uuid="6b9192ae-4ea1-4e80-9f08-67ef9917a7b9">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<subreportParameter name="initData">
+					<subreportParameterExpression><![CDATA[$P{initData}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="notGivenAdministrations">
+					<subreportParameterExpression><![CDATA[$F{notGivenAdministrations}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="givenAdministrations">
+					<subreportParameterExpression><![CDATA[$F{givenAdministrations}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="deferredAdministrations">
+					<subreportParameterExpression><![CDATA[$F{deferredAdministrations}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{initData}.getSubreportsDir() + "TherapyDayE_Medication_Statuses.jasper"]]></subreportExpression>
+			</subreport>
+			<frame>
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="785" height="75" uuid="c3632f44-857c-4eab-9616-dbae11e0fec8"/>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+			</frame>
+		</band>
+	</detail>
+</jasperReport>

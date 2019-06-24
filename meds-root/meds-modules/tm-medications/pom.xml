@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <artifactId>meds-modules</artifactId>
+        <groupId>com.marand.thinkmed</groupId>
+        <version>3.7.0-SNAPSHOT</version>
+    </parent>
+
+    <packaging>pom</packaging>
+
+    <version>3.7.0-SNAPSHOT</version>
+    <artifactId>tm-medications</artifactId>
+    <name>Think!Med - Medications</name>
+
+    <modules>
+        <module>openep-server</module>
+        <module>tm-medications-server</module>
+        <module>tm-medications-common</module>
+        <module>tm-medications-client</module>
+        <module>tm-medications-bpm-server</module>
+        <module>tm-medications-bpm-common</module>
+        <module>tm-medications-connector_</module>
+        <module>tm-medications-report</module>
+        <module>tm-medications-model</module>
+        <module>tm-medications-api</module>
+        <module>tm-medications-ehr-model</module>
+        <module>e2e-testing</module>
+    </modules>
+
+</project>

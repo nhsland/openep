@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2019-02-19T18:46:44 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="TherapyDayB_Medication" pageWidth="786" pageHeight="539" orientation="Landscape" columnWidth="786" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" resourceBundle="com.marand.ispek.common.Dictionary" whenResourceMissingType="Key" uuid="8d713aa8-1f3a-4536-a167-162361f93792">
+	<property name="ireport.zoom" value="1.7715610000000017"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<template><![CDATA[$P{initData}.getStylesDir() + "TherapyDay_Styles.jrtx"]]></template>
+	<parameter name="initData" class="com.marand.ispek.print.jasperreports.IspekJasperReportInitData" isForPrompting="false"/>
+	<parameter name="labelFieldDelimiter" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[": "]]></defaultValueExpression>
+	</parameter>
+	<parameter name="showGroups" class="java.lang.Boolean" isForPrompting="false">
+		<defaultValueExpression><![CDATA[true]]></defaultValueExpression>
+	</parameter>
+	<parameter name="therapyApplicationStartDate" class="java.util.Date" isForPrompting="false"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="administrations" class="java.util.List">
+		<fieldDescription><![CDATA[administrations]]></fieldDescription>
+	</field>
+	<field name="therapyReportStatusEnum" class="com.marand.thinkmed.medications.TherapyReportStatusEnum">
+		<fieldDescription><![CDATA[therapyReportStatusEnum]]></fieldDescription>
+	</field>
+	<field name="customGroupSortOrder" class="java.lang.Integer">
+		<fieldDescription><![CDATA[customGroupSortOrder]]></fieldDescription>
+	</field>
+	<field name="consecutiveDayLabel" class="java.lang.String">
+		<fieldDescription><![CDATA[consecutiveDayLabel]]></fieldDescription>
+	</field>
+	<field name="showTherapyConsecutiveDay" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[showTherapyConsecutiveDay]]></fieldDescription>
+	</field>
+	<field name="therapyEnd" class="java.lang.String">
+		<fieldDescription><![CDATA[therapyEnd]]></fieldDescription>
+	</field>
+	<field name="currentRate" class="java.lang.String">
+		<fieldDescription><![CDATA[currentRate]]></fieldDescription>
+	</field>
+	<field name="doseDescription" class="java.lang.String">
+		<fieldDescription><![CDATA[doseDescription]]></fieldDescription>
+	</field>
+	<field name="therapyConsecutiveDay" class="java.lang.String">
+		<fieldDescription><![CDATA[therapyConsecutiveDay]]></fieldDescription>
+	</field>
+	<field name="currentOxygenDevice" class="java.lang.String">
+		<fieldDescription><![CDATA[currentOxygenDevice]]></fieldDescription>
+	</field>
+	<field name="therapyStart" class="java.lang.String">
+		<fieldDescription><![CDATA[therapyStart]]></fieldDescription>
+	</field>
+	<field name="customGroupName" class="java.lang.String">
+		<fieldDescription><![CDATA[customGroupName]]></fieldDescription>
+	</field>
+	<field name="dateDoseTime" class="java.util.Map">
+		<fieldDescription><![CDATA[dateDoseTime]]></fieldDescription>
+	</field>
+	<field name="hourDoseTime" class="java.util.List">
+		<fieldDescription><![CDATA[hourDoseTime]]></fieldDescription>
+	</field>
+	<field name="pharmacistsReviewState" class="com.marand.thinkmed.medications.dto.pharmacist.review.TherapyPharmacistReviewStatusEnum">
+		<fieldDescription><![CDATA[pharmacistsReviewState]]></fieldDescription>
+	</field>
+	<field name="order" class="com.marand.thinkmed.medications.api.internal.dto.SimpleTherapyDto">
+		<fieldDescription><![CDATA[order]]></fieldDescription>
+	</field>
+	<group name="customGroupSortOrder">
+		<groupExpression><![CDATA[$F{customGroupSortOrder}]]></groupExpression>
+		<groupHeader>
+			<band/>
+		</groupHeader>
+	</group>
+	<group name="customGroupName" isReprintHeaderOnEachPage="true" keepTogether="true">
+		<groupExpression><![CDATA[$F{customGroupName}]]></groupExpression>
+		<groupHeader>
+			<band height="13">
+				<printWhenExpression><![CDATA[$P{showGroups}]]></printWhenExpression>
+				<textField>
+					<reportElement style="group" x="0" y="0" width="771" height="13" uuid="1c75be6e-89d5-463b-b63e-3374703ebcc6"/>
+					<textFieldExpression><![CDATA[$F{customGroupName} == null ? $R{other.undef} : $F{customGroupName}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+	</group>
+	<detail>
+		<band height="3">
+			<printWhenExpression><![CDATA[!$P{showGroups}]]></printWhenExpression>
+		</band>
+		<band height="60" splitType="Prevent">
+			<rectangle>
+				<reportElement style="lineOutside" stretchType="RelativeToBandHeight" x="0" y="0" width="785" height="60" uuid="9ec3161f-1506-411c-b9be-e5db1803735c">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+			</rectangle>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="dataBorder" stretchType="RelativeToBandHeight" x="0" y="0" width="285" height="20" isRemoveLineWhenBlank="true" uuid="7695cacd-0e91-4511-876b-37dcff936016">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box topPadding="1" leftPadding="2" bottomPadding="1" rightPadding="2"/>
+				<textElement markup="html">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getSimpleCombinedDisplay($F{order}, $F{therapyConsecutiveDay}, $F{showTherapyConsecutiveDay}, $F{therapyStart}, $F{therapyEnd}, $F{therapyReportStatusEnum}, $P{REPORT_LOCALE}, $F{consecutiveDayLabel}, null)]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement stretchType="RelativeToBandHeight" x="285" y="0" width="500" height="50" uuid="2265ebcc-ce3b-489f-a03b-c6f21fae094f">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<parametersMapExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}]]></parametersMapExpression>
+				<subreportParameter name="pharmacistsReviewState">
+					<subreportParameterExpression><![CDATA[$F{pharmacistsReviewState}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="order">
+					<subreportParameterExpression><![CDATA[$F{order}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="therapyApplicationStartDate">
+					<subreportParameterExpression><![CDATA[$P{therapyApplicationStartDate}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="labelFieldDelimiter">
+					<subreportParameterExpression><![CDATA[$P{labelFieldDelimiter}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="administrations">
+					<subreportParameterExpression><![CDATA[$F{administrations}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="hourDoseTime">
+					<subreportParameterExpression><![CDATA[$F{hourDoseTime}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="therapyReportStatusEnum">
+					<subreportParameterExpression><![CDATA[$F{therapyReportStatusEnum}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="endTime">
+					<subreportParameterExpression><![CDATA[$F{order}.getEnd()]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="doseDescription">
+					<subreportParameterExpression><![CDATA[$F{doseDescription}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{hourDoseTime})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{initData}.getSubreportsDir() + "TherapyDay_Empty_RateDose.jasper"]]></subreportExpression>
+			</subreport>
+			<textField>
+				<reportElement positionType="Float" x="0" y="20" width="285" height="40" uuid="7f290ed3-872a-4bc0-b794-e58cd801a29e">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.1"/>
+					<leftPen lineWidth="0.1"/>
+					<bottomPen lineWidth="0.1"/>
+					<rightPen lineWidth="0.1"/>
+				</box>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getBarcodeLabel($P{REPORT_LOCALE})]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="smallLabel" positionType="Float" x="285" y="50" width="500" height="10" isPrintWhenDetailOverflows="true" uuid="d80c5542-1212-459f-b0f5-12cf6b399b0e">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.25" lineStyle="Solid" lineColor="#666666"/>
+					<leftPen lineWidth="0.25" lineStyle="Solid" lineColor="#666666"/>
+					<bottomPen lineWidth="0.25" lineStyle="Solid" lineColor="#666666"/>
+					<rightPen lineWidth="0.25" lineStyle="Solid" lineColor="#666666"/>
+				</box>
+				<textElement verticalAlignment="Top" markup="html"/>
+				<textFieldExpression><![CDATA[com.marand.thinkmed.medications.dto.report.TherapyDayReportUtils.getWarnings($F{order}, $P{REPORT_LOCALE})]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

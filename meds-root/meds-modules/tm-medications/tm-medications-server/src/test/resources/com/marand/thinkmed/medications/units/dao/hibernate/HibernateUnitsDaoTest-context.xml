@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <import resource="classpath:com/marand/thinkmed/medications/openep-test-defaults.xml"/>
+    <import resource="classpath:/com/marand/thinkmed/medications/ac-hibernate-packages.xml"/>
+    <import resource="classpath:ac-catalog.xml"/>
+
+    <bean id="unitsDao" class="com.marand.thinkmed.medications.units.dao.hibernate.HibernateUnitsDao">
+        <constructor-arg name="sessionFactory" ref="hibernateSessionFactory"/>
+        <constructor-arg name="medicationUnitTypeDtoMapper" ref="medicationUnitTypeDtoMapper"/>
+    </bean>
+
+    <bean id="medicationUnitTypeDtoMapper" class="com.marand.thinkmed.medications.units.mapper.MedicationUnitTypeDtoMapper"/>
+
+    <bean id="requestScopeTime" class="com.marand.thinkmed.request.time.RequestScopeTime"/>
+
+    <bean id="requestDateTimeHolder" class="com.marand.thinkmed.request.time.RequestDateTimeHolder"/>
+
+</beans>

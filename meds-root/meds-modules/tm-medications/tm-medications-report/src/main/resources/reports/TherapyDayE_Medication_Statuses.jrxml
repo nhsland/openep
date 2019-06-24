@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2019-02-18T09:36:11 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="TherapyDayE_Medication" pageWidth="802" pageHeight="555" orientation="Landscape" columnWidth="802" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="58c0fd36-804f-4e48-84b9-7301be4f4b29">
+	<parameter name="initData" class="com.marand.ispek.print.jasperreports.IspekJasperReportInitData"/>
+	<parameter name="givenAdministrations" class="java.util.List"/>
+	<parameter name="notGivenAdministrations" class="java.util.List"/>
+	<parameter name="deferredAdministrations" class="java.util.List"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="givenAdministrations" class="java.util.List">
+		<fieldDescription><![CDATA[givenAdministrations]]></fieldDescription>
+	</field>
+	<field name="therapyStart" class="java.lang.String">
+		<fieldDescription><![CDATA[therapyStart]]></fieldDescription>
+	</field>
+	<field name="notGivenAdministrations" class="java.util.List">
+		<fieldDescription><![CDATA[notGivenAdministrations]]></fieldDescription>
+	</field>
+	<field name="therapyReportStatusEnum" class="com.marand.thinkmed.medications.TherapyReportStatusEnum">
+		<fieldDescription><![CDATA[therapyReportStatusEnum]]></fieldDescription>
+	</field>
+	<field name="deferredAdministrations" class="java.util.List">
+		<fieldDescription><![CDATA[deferredAdministrations]]></fieldDescription>
+	</field>
+	<field name="therapyEnd" class="java.lang.String">
+		<fieldDescription><![CDATA[therapyEnd]]></fieldDescription>
+	</field>
+	<field name="currentRate" class="java.lang.String">
+		<fieldDescription><![CDATA[currentRate]]></fieldDescription>
+	</field>
+	<field name="pharmacistsReviewState" class="com.marand.thinkmed.medications.dto.pharmacist.review.TherapyPharmacistReviewStatusEnum">
+		<fieldDescription><![CDATA[pharmacistsReviewState]]></fieldDescription>
+	</field>
+	<field name="class" class="java.lang.Class">
+		<fieldDescription><![CDATA[class]]></fieldDescription>
+	</field>
+	<field name="therapyConsecutiveDay" class="java.lang.String">
+		<fieldDescription><![CDATA[therapyConsecutiveDay]]></fieldDescription>
+	</field>
+	<field name="order" class="com.marand.thinkmed.medications.api.internal.dto.TherapyDto">
+		<fieldDescription><![CDATA[order]]></fieldDescription>
+	</field>
+	<field name="showTherapyConsecutiveDay" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[showTherapyConsecutiveDay]]></fieldDescription>
+	</field>
+	<detail>
+		<band height="1">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<subreport>
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="510" height="1" isPrintInFirstWholeBand="true" uuid="3fe1dd00-40b1-479c-b5e0-5a1d54430323"/>
+				<subreportParameter name="Status">
+					<subreportParameterExpression><![CDATA[1]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="initData">
+					<subreportParameterExpression><![CDATA[$P{initData}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="notGivenAdministrations">
+					<subreportParameterExpression><![CDATA[$P{notGivenAdministrations}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></dataSourceExpression>
+				<subreportExpression><![CDATA[!$P{notGivenAdministrations}.isEmpty() ? $P{initData}.getSubreportsDir() + "TherapyDayE_Status_NotGiven.jasper" : null]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="1">
+			<subreport>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="510" height="1" isPrintInFirstWholeBand="true" uuid="f9241033-2a9a-46ed-91c5-3386a663478a"/>
+				<subreportParameter name="Status">
+					<subreportParameterExpression><![CDATA[2]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="initData">
+					<subreportParameterExpression><![CDATA[$P{initData}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="deferredAdministrations">
+					<subreportParameterExpression><![CDATA[$P{deferredAdministrations}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></dataSourceExpression>
+				<subreportExpression><![CDATA[!$P{deferredAdministrations}.isEmpty() ? $P{initData}.getSubreportsDir() + "TherapyDayE_Status_Deferred.jasper" : null]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="1">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<subreport>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="510" height="1" isPrintInFirstWholeBand="true" uuid="258c486c-3e8f-4da1-b4d3-4b7b33f712a5"/>
+				<subreportParameter name="Status">
+					<subreportParameterExpression><![CDATA[0]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="initData">
+					<subreportParameterExpression><![CDATA[$P{initData}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="givenAdministrations">
+					<subreportParameterExpression><![CDATA[$P{givenAdministrations}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></dataSourceExpression>
+				<subreportExpression><![CDATA[!$P{givenAdministrations}.isEmpty() ? $P{initData}.getSubreportsDir() + "TherapyDayE_Status_Given.jasper" : null]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>

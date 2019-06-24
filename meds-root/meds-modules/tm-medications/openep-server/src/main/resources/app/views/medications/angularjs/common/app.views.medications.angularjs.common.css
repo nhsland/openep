@@ -1,0 +1,177 @@
+/**
+ *  Required extension of OPENeP base CSS for AngularJS application components.
+ */
+
+/* From TherapyView CSS */
+.app-views .therapy-icon.icon_pills,
+.app-views .therapy-icon.icon_infusion,
+.app-views .therapy-icon.icon_injection,
+.app-views .therapy-icon.icon_inhalation,
+.app-views .therapy-icon.icon_bolus,
+.app-views .therapy-icon.icon_continuous_infusion,
+.app-views .therapy-icon.icon_baseline_infusion,
+.app-views .therapy-icon.icon_other_medication {
+    background-size: 100%;
+    width: 48px;
+    height: 48px;
+}
+
+.app-views .therapy-icon.icon_pills {
+    background-image: url('${context.path}/resources/images/icons/therapyPill_48.png');
+}
+
+.app-views .therapy-icon.icon_infusion {
+    background-image: url('${context.path}/resources/images/icons/therapyInfusion_48.png');
+}
+
+.app-views .therapy-icon.icon_injection {
+    background-image: url('${context.path}/resources/images/icons/therapyInjection_48.png');
+}
+
+.app-views .therapy-icon.icon_inhalation {
+    background-image: url('${context.path}/resources/images/icons/inhalation_48.png');
+}
+
+.app-views .therapy-icon.icon_bolus {
+    background-image: url('${context.path}/resources/images/icons/bolus_48.png');
+}
+
+.app-views .therapy-icon.icon_continuous_infusion {
+    background-image: url('${context.path}/resources/images/icons/therapyInfusionPermanent_48.png');
+}
+
+.app-views .therapy-icon.icon_baseline_infusion {
+    background-image: url('${context.path}/resources/images/icons/therapyInfusionBlue_48.png');
+}
+
+.app-views .therapy-icon.icon_other_medication {
+    background-image: url('${context.path}/resources/images/icons/therapy_48.png');
+}
+
+.app-views .status-icon.therapy-status.icon_aborted {
+    background-image: url('${context.path}/resources/images/icons/deleteRed_status_16.png');
+    float: right;
+}
+
+.app-views .status-icon.therapy-status.icon_cancelled {
+    background-image: url('${context.path}/resources/images/icons/cancel_status_16.png');
+    float: right;
+}
+
+.app-views .status-icon.therapy-status.icon_suspended {
+    background-image: url('${context.path}/resources/images/icons/suspend_status_16.png');
+    float: right;
+}
+
+.app-views .status-icon.therapy-status.icon_suspended_temporary_leave {
+    background-image: url('${context.path}/resources/images/icons/suspend_temp_leave_status_16.png');
+    float: right;
+}
+
+.app-views .status-icon.therapy-status.icon_late {
+    background-image: url('${context.path}/resources/images/icons/warningYellow_status_16.png');
+    float: right;
+}
+
+.app-views .status-icon.therapy-status.icon_very_late {
+    background-image: url('${context.path}/resources/images/icons/warningRed_status_16.png');
+    float: right;
+}
+
+.app-views .status-icon.icon_changed {
+    background-image: url('${context.path}/resources/images/icons/change_status_16.png');
+    background-size: 100%;
+    width: 16px;
+    height: 16px;
+    float: left;
+}
+
+.app-views .status-icon.icon_self_admin_automatic {
+    background-image: url('${context.path}/resources/images/icons/selfAdministratedAuto.png');
+}
+
+.app-views .status-icon.icon_self_admin_nurse {
+    background-image: url('${context.path}/resources/images/icons/selfAdminNurse_16.png');
+}
+
+.app-views .status-icon.icon_day_number,
+.app-views .status-icon.icon_link {
+    font-size: 10px;
+    font-weight: bold;
+    color: #ffffff;
+    background: #2aa4e5;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    line-height: 16px;
+    min-width: 16px;
+    text-align: center;
+}
+
+.app-views .status-icon.icon_self_admin_automatic,
+.app-views .status-icon.icon_self_admin_nurse {
+    background-size: 100%;
+    width: 16px;
+    height: 16px;
+}
+
+
+/* therapy status line colors */
+.app-views .meds-therapy-description.aborted .status-line {
+    background-color: rgb(190, 30, 45);
+}
+
+.app-views .meds-therapy-description.suspended .status-line {
+    background-color: rgb(255, 245, 64);
+}
+
+.app-views .meds-therapy-description.changed .status-line {
+    background-color: rgb(255, 164, 19);
+}
+
+.app-views .meds-therapy-description.additional-warning .status-line {
+    background-color: rgb(237, 29, 37);
+}
+/* end of TherapyView.css snippets */
+
+.app-views .therapy-description {
+    margin-left: 10px;
+    margin-right: 15px;
+}
+
+.app-views .therapy-icon {
+    position: relative;
+}
+
+.app-views .meds-therapy-description .therapy-icon {
+    margin: 2px 4px 2px 3px;
+}
+
+.app-views .therapy-icon .status-icon {
+    position: absolute;
+}
+
+.app-views .therapy-icon .status-icon.icon_changed {
+    left: 0;
+    top: 0;
+}
+
+.app-views .therapy-icon .status-icon.self-administering {
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.app-views .therapy-icon .status-icon.icon_link {
+    left: 0;
+    bottom: 0;
+}
+
+.app-views .therapy-icon .status-icon.icon_day_number {
+    right: 0;
+    top: 0;
+}
+
+.app-views .therapy-icon .status-icon.therapy-status {
+    right: 0;
+    bottom: 0;
+}

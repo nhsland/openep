@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <import resource="classpath:com/marand/thinkmed/medications/openep-test-defaults.xml"/>
+    <import resource="classpath:/com/marand/thinkmed/medications/ac-hibernate-packages.xml"/>
+
+    <!-- DAOs-->
+
+    <bean id="therapyTemplateDao" class="com.marand.thinkmed.medications.dao.hibernate.HibernateTherapyTemplateDao"/>
+
+    <bean id="unitsDao" class="org.mockito.Mockito" factory-method="mock">
+        <constructor-arg value="com.marand.thinkmed.medications.units.dao.UnitsDao"/>
+    </bean>
+
+    <bean id="medicationsBo" class="org.mockito.Mockito" factory-method="mock">
+        <constructor-arg value="com.marand.thinkmed.medications.business.MedicationsBo"/>
+    </bean>
+
+    <bean id="therapyDisplayProvider" class="org.mockito.Mockito" factory-method="mock">
+        <constructor-arg value="com.marand.thinkmed.medications.business.impl.TherapyDisplayProvider"/>
+    </bean>
+
+    <bean id="releaseDetailsDisplayProvider" class="org.mockito.Mockito" factory-method="mock">
+        <constructor-arg value="com.marand.thinkmed.medications.business.impl.ReleaseDetailsDisplayProvider"/>
+    </bean>
+
+    <bean id="unitsProvider" class="org.mockito.Mockito" factory-method="mock">
+        <constructor-arg value="com.marand.thinkmed.medications.units.provider.TestUnitsProviderImpl"/>
+    </bean>
+
+    <bean id="templateValidationManager" class="org.mockito.Mockito" factory-method="mock">
+        <constructor-arg value="com.marand.thinkmed.medications.template.TemplateValidationManager"/>
+    </bean>
+
+</beans>

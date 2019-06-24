@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <parent>
+        <artifactId>tm-request</artifactId>
+        <groupId>com.marand.thinkmed</groupId>
+        <version>3.7.0-SNAPSHOT</version>
+    </parent>
+
+    <properties>
+        <keycloak.version>3.1.0.Final</keycloak.version>
+    </properties>
+
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>tm-request-keycloak</artifactId>
+    <name>Requests (Keycloak)</name>
+
+    <!-- keycloak -->
+
+    <dependencies>
+
+        <dependency>
+            <groupId>org.keycloak</groupId>
+            <artifactId>keycloak-spring-security-adapter</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.marand.thinkmed</groupId>
+            <artifactId>tm-request-core</artifactId>
+        </dependency>
+
+    </dependencies>
+</project>

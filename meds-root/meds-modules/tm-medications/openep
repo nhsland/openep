@@ -1,0 +1,92 @@
+#!/bin/bash
+
+# ------------------------------------------------------------------
+# 27.8.2018 Grega Vrečar 
+# Script can be used for deploying or restarting Openep versions
+# ------------------------------------------------------------------
+
+#Colors
+Gre='\e[0;32m'; #Green
+Red='\e[0;31m'; #Red
+Yel='\e[0;33m'; #Yellow
+Blu='\e[0;36m'; #Blue
+RC='\e[0m';		#Reset color
+
+# VARIABLES
+
+JAR_PREFIX="openep"
+
+# Directory of script
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+# Get currentFolder
+currentFolder=$( readlink ${SCRIPT_DIR}/last )
+
+help() {
+  echo -e "meds-config manager with commands :
+  ${Blu}start <version>${RC} - stops current ${JAR_PREFIX} and starts version stated as first argument.
+  ${Blu}stop${RC}            - stops current ${JAR_PREFIX}.
+  ${Blu}restart${RC}         - stops current ${JAR_PREFIX} and starts it.
+  ${Blu}status${RC}          - Displays status and version of current ${JAR_PREFIX}.
+  ${Blu}version${RC}         - Displays version of current ${JAR_PREFIX}."
+}
+
+start() {
+  #Get new version name from first parameter
+  newFolder=$1
+  if [[ ! -d ${SCRIPT_DIR}/${newFolder} || -z ${newFolder} ]]; then
+    echo -e "${Red}Folder ${newFolder} doesn't exist!${RC}" && exit 1
+  fi
+  
+  #Stop currently running jar
+  echo -e "Stopping ${currentFolder}..."
+  ${SCRIPT_DIR}/${currentFolder}/${JAR_PREFIX}-${currentFolder}.jar stop
+
+  #Re-link
+  rm -rf ${SCRIPT_DIR}/last
+  ln -s ${newFolder} ${SCRIPT_DIR}/last
+  
+  #Start new jar
+  echo -e "Starting ${newFolder}..."
+  ${SCRIPT_DIR}/${newFolder}/${JAR_PREFIX}-${newFolder}.jar start
+}
+
+stop() {
+
+  #Stop currently running jar
+  echo -e "Stopping ${currentFolder}..."
+  ${SCRIPT_DIR}/${currentFolder}/${JAR_PREFIX}-${currentFolder}.jar stop
+}
+
+status() {
+  #Read running
+  local running_pid=$( pgrep -f ${SCRIPT_DIR}/"[0-9].[0-9].[0-9]" )
+  #Display openep  status
+  if [[ -z ${running_pid} ]]; then
+    echo -e "Active version : ${Gre}${currentFolder}${RC}"
+    echo -e "${Yel}${JAR_PREFIX} not running!${RC}"
+  else
+    local running_version=$( readlink /proc/${running_pid}/cwd )
+	running_version=${running_version##*/}	
+	echo -e "Running : ${Gre}${running_version}${RC} with PID ${Blu}${running_pid}${RC}"
+	if [[ ${running_version} != ${currentFolder##*/} ]]; then echo -e "${Yel}Running version not matching folder link ${Red}${currentFolder}${Yel}!${RC}"; fi
+  fi
+}
+
+version() {
+  echo -e "Active version : ${Gre}${currentFolder}${RC}"
+}
+
+#MAIN
+command="${1}"
+args="${2}"
+
+case "${command}" in
+  help) help;;	
+  start) start ${args};;
+  stop) stop;;
+  restart) start ${currentFolder};;
+  status) status;;
+  version) version;;
+  *) echo "Unknown command '${command}'.\nTry help command for more info." && exit 1;;
+esac

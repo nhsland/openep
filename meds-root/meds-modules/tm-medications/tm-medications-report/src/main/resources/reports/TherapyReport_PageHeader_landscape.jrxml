@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2018-09-11T12:07:22 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Ispek_PageHeader_landscape" pageWidth="786" pageHeight="539" orientation="Landscape" columnWidth="786" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" resourceBundle="com.marand.ispek.common.Dictionary" whenResourceMissingType="Key" uuid="8d713aa8-1f3a-4536-a167-162361f93792">
+	<template><![CDATA[$P{initData}.getCommonStylesDir() + "Ispek_DocumentStyles.jrtx"]]></template>
+	<parameter name="initData" class="com.marand.ispek.print.jasperreports.IspekJasperReportInitData" isForPrompting="false">
+		<defaultValueExpression><![CDATA[com.marand.ispek.print.jasperreports.SampleIspekJRDataSourceFactory.createInitData()]]></defaultValueExpression>
+	</parameter>
+	<parameter name="pageHeaderData" class="String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[$P{initData}.getPageHeaderData()]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band height="33"/>
+	</background>
+	<detail>
+		<band height="19" splitType="Stretch"/>
+		<band height="15">
+			<printWhenExpression><![CDATA[!($P{pageHeaderData} == null || $P{pageHeaderData}.isEmpty())]]></printWhenExpression>
+			<textField isBlankWhenNull="true">
+				<reportElement style="normal" x="0" y="0" width="350" height="15" uuid="b441daa0-9858-44bc-a084-3ff7498356a4"/>
+				<textElement markup="html"/>
+				<textFieldExpression><![CDATA[$P{pageHeaderData}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="5"/>
+	</detail>
+</jasperReport>
