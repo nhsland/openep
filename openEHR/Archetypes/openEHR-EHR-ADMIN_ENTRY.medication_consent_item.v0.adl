@@ -1,0 +1,149 @@
+archetype (adl_version=1.4; uid=726ffe7d-59e3-3bfc-991d-24ad26e1e6b4)
+	openEHR-EHR-ADMIN_ENTRY.medication_consent_item.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::sl]>
+	translations = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			author = <
+				["name"] = <"?">
+			>
+		>
+	>
+
+description
+	original_author = <
+		["date"] = <"2015-12-09">
+		["name"] = <"Roko Malkoč">
+	>
+	lifecycle_state = <"0">
+	details = <
+		["sl"] = <
+			language = <[ISO_639-1::sl]>
+			purpose = <"Tip predmeta na soglasju za zdravljenje. ">
+		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"Medication item that can be added on the Medication consent. ">
+			use = <"- Mental health ">
+		>
+	>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"aade2c1614d8352813078429fcd7772d">
+		["build_uid"] = <"9c25c93e-c006-3c2e-b42d-6c361571ba1d">
+	>
+
+definition
+	ADMIN_ENTRY[at0000] matches {    -- Tip predmeta na soglasju
+		data matches {
+			ITEM_TREE[at0001] matches {    -- Drevo
+				items cardinality matches {1..*; unordered} matches {
+					CLUSTER[at0002] matches {    -- Tip predmeta
+						items cardinality matches {2..*; unordered} matches {
+							ELEMENT[at0003] matches {    -- Zdravilo
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0004] matches {    -- Tip predmeta
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0009,    -- Medication
+											at0011]    -- Medication group
+										}
+									}
+								}
+							}
+						}
+					}
+					ELEMENT[at0008] occurrences matches {0..1} matches {    -- Način aplikacije
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["sl"] = <
+			items = <
+				["at0000"] = <
+					text = <"Tip predmeta na soglasju">
+					description = <"Tip predmeta na soglasju za zdravljenje. ">
+				>
+				["at0001"] = <
+					text = <"Drevo">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Tip predmeta">
+					description = <"Tip predmeta na soglasju. ">
+				>
+				["at0003"] = <
+					text = <"Zdravilo">
+					description = <"Ime zdravila, skupin zdravila ali seznama zdravil. ">
+				>
+				["at0004"] = <
+					text = <"Tip predmeta">
+					description = <"Tip predmeta">
+				>
+				["at0008"] = <
+					text = <"Način aplikacije">
+					description = <"Način aplikacije zdravila.">
+				>
+				["at0009"] = <
+					text = <"Medication">
+					description = <"Single medication">
+				>
+				["at0011"] = <
+					text = <"Medication group">
+					description = <"*">
+				>
+			>
+		>
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Medication consent item">
+					description = <"Medication consent item that can be added on Medication consent. ">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Medication item">
+					description = <"Medication item for the consent form. ">
+				>
+				["at0003"] = <
+					text = <"Name">
+					description = <"Name of medication or group of medications.">
+				>
+				["at0004"] = <
+					text = <"Type">
+					description = <"Medication item type. ">
+				>
+				["at0008"] = <
+					text = <"Route">
+					description = <"Route of medication, group of medications or list of medications. ">
+				>
+				["at0009"] = <
+					text = <"Medication">
+					description = <"Single medication">
+				>
+				["at0011"] = <
+					text = <"Medication group">
+					description = <"*">
+				>
+			>
+		>
+	>

@@ -1,0 +1,87 @@
+archetype (adl_version=1.4; uid=f8aab053-a958-4e90-86ba-ed716aa3566d)
+	openEHR-EHR-INSTRUCTION.medication_reconciliation_additional_information.v0
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+
+description
+	original_author = <
+		["date"] = <"2018-09-03">
+	>
+	lifecycle_state = <"unmanaged">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+		>
+	>
+	other_details = <
+		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.">
+		["custodian_organisation"] = <"openEHR Foundation">
+		["original_namespace"] = <"org.openehr">
+		["original_publisher"] = <"openEHR Foundation">
+		["custodian_namespace"] = <"org.openehr">
+		["MD5-CAM-1.0.1"] = <"7ca5a3c12b3d0670e8949d82cca56708">
+		["build_uid"] = <"49302cb4-183e-3021-b2dd-41af8f7e7580">
+	>
+
+definition
+	INSTRUCTION[at0000] matches {    -- Medication_reconciliation_additional_information
+		activities cardinality matches {0..*; unordered} matches {
+			ACTIVITY[at0001] matches {    -- Reconciliation
+				description matches {
+					ITEM_TREE[at0002] matches {    -- ItemTree
+						items cardinality matches {0..*; unordered} matches {
+							ELEMENT[at0004] occurrences matches {0..1} matches {    -- Admission last update time
+								value matches {
+									DV_DATE_TIME matches {*}
+								}
+							}
+							ELEMENT[at0005] occurrences matches {0..1} matches {    -- Discharge last update time
+								value matches {
+									DV_DATE_TIME matches {*}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0003] matches {*}    -- ItemTree
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Medication_reconciliation_additional_information">
+					description = <"Medication_reconciliation_additional_information">
+				>
+				["at0001"] = <
+					text = <"Reconciliation">
+					description = <"*">
+				>
+				["at0002"] = <
+					text = <"ItemTree">
+					description = <"@ internal @">
+				>
+				["at0003"] = <
+					text = <"ItemTree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Admission last update time">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"Discharge last update time">
+					description = <"*">
+				>
+			>
+		>
+	>

@@ -1,0 +1,62 @@
+archetype (adl_version=1.4; uid=3144c1ba-3751-3416-9e8a-35ea38ef2ff1)
+	openEHR-EHR-SECTION.ispek_dialog.v1
+
+concept
+	[at0000]
+
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["sl"] = <
+			language = <[ISO_639-1::sl]>
+			author = <
+				["name"] = <"?">
+			>
+		>
+	>
+
+description
+	original_author = <
+		["date"] = <"08/06/2010">
+		["name"] = <"Dr Ian McNicoll">
+		["organisation"] = <"Ocean Informatics">
+		["email"] = <"ian.mcnicoll@oceaninformatics .com">
+	>
+	lifecycle_state = <"AuthorDraft">
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To act as a container for a set of archetype which represent a single date-capture screen.">
+		>
+		["sl"] = <
+			language = <[ISO_639-1::sl]>
+			purpose = <"Acts as a container for a set of archetype which represent a single data-capture screen.">
+		>
+	>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"2090C400747F2DF2AEFD3D9583B6D1ED">
+		["build_uid"] = <"75adc6fd-28a3-34e5-9cf1-781238bde08b">
+	>
+
+definition
+	SECTION[at0000] matches {*}    -- Dialog
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Dialog">
+					description = <"Acts as a container for a set of archetype which represent a single date-capture screen.">
+				>
+			>
+		>
+		["sl"] = <
+			items = <
+				["at0000"] = <
+					text = <"Dialog">
+					description = <"Acts as a container for a set of archetype which represent a single data-capture screen.">
+				>
+			>
+		>
+	>
