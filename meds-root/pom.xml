@@ -38,7 +38,7 @@
         <javax-mail.version>1.4.4</javax-mail.version>
         <junit-jupiter-api.version>RELEASE</junit-jupiter-api.version>
         <keycloak.version>3.1.0.Final</keycloak.version>
-        <kotlin.version>1.2.60</kotlin.version>
+        <kotlin.version>1.5.0</kotlin.version>
         <kotlin.compiler.incremental>true</kotlin.compiler.incremental>
         <kotlin.compiler.jvmTarget>1.8</kotlin.compiler.jvmTarget>
         <kotlinx-coroutines-core.version>0.23.4</kotlinx-coroutines-core.version>
